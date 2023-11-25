@@ -1,0 +1,78 @@
+{
+  "name": "@job/lib",
+  "version": "0.0.1",
+  "description": "Job Design System",
+  "main": "./lib/components/index.js",
+  "module": "./lib/components/index.js",
+  "types": "./lib/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js"
+    },
+    "./components": {
+      "import": "./lib/components/index.js"
+    },
+    "./hooks": {
+      "import": "./lib/hooks/index.js"
+    },
+    "./utils": {
+      "import": "./lib/utils/index.js"
+    },
+    "./lib/style.css": "./lib/harmony/style.css"
+  },
+  "typesVersions": {
+    "*": {
+      "components": [
+        "./lib/components/index.d.ts"
+      ],
+      "hooks": [
+        "./lib/hooks/index.d.ts"
+      ],
+      "utils": [
+        "./lib/utils/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && vite build",
+    "prepare": "husky install",
+    "lint": "eslint --ext .js,.ts,.tsx ."
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@types/react": "^18.2.38",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@yelo/rollup-node-external": "^1.0.1",
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "glob": "^10.3.10",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "react": "^18.2.0",
+    "typescript": "^5.3.2",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "vite": "^5.0.2",
+    "vite-plugin-dts": "^3.6.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,4 @@
+##### BUILD
+node_modules/
+/lib
+.vscode
