@@ -1,2 +1,5 @@
-export * from './button/button';
-export * from './Card/Card';
+import Title from './Title/Title';
+
+export { Card } from './Card/Card';
+
+export { Title };
