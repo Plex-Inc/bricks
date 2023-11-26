@@ -1,29 +1,51 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-export const useKeyPress = (targetKey: string) => {
-  const [keyPressed, setKeyPressed] = useState(false);
+const noop = () => {};
 
-  const downHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(true);
-    }
-  };
+const inputNodes = ['INPUT', 'TEXTAREA'];
 
-  const upHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(false);
-    }
-  };
+export const useKeyPress = (targetKey: string | null) => {
+    const [keyPressed, setKeyPressed] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-    window.addEventListener("keyup", upHandler);
+    const downHandler = targetKey
+        ? (e: KeyboardEvent) => {
+              if (e.target instanceof HTMLElement) {
+                  if (inputNodes.includes(e.target.nodeName)) {
+                      return;
+                  }
+              }
 
-    return () => {
-      window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("keyup", upHandler);
-    };
-  });
+              if (e.key === targetKey) {
+                  e.preventDefault();
+                  setKeyPressed(true);
+              }
+          }
+        : noop;
 
-  return keyPressed;
+    const upHandler = targetKey
+        ? (e: KeyboardEvent) => {
+              if (e.target instanceof HTMLElement) {
+                  if (inputNodes.includes(e.target.nodeName)) {
+                      return;
+                  }
+              }
+
+              if (e.key === targetKey) {
+                  e.preventDefault();
+                  setKeyPressed(false);
+              }
+          }
+        : noop;
+
+    useEffect((): void | (() => void) => {
+        window.addEventListener('keydown', downHandler);
+        window.addEventListener('keyup', upHandler);
+
+        return () => {
+            window.removeEventListener('keydown', downHandler);
+            window.removeEventListener('keyup', upHandler);
+        };
+    });
+
+    return keyPressed;
 };

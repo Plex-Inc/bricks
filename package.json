@@ -1,7 +1,7 @@
 {
-  "name": "@job/lib",
+  "name": "@plex/bricks",
   "version": "0.0.1",
-  "description": "Job Design System",
+  "description": "Plex Design System",
   "main": "./lib/components/index.js",
   "module": "./lib/components/index.js",
   "types": "./lib/components/index.d.ts",
@@ -40,7 +40,8 @@
     "clean": "rm -rf ./lib",
     "build": "npm run clean && vite build",
     "prepare": "husky install",
-    "lint": "eslint --ext .js,.ts,.tsx ."
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",

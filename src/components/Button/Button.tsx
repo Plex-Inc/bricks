@@ -1,16 +1,14 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 import s from './Button.module.css';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 
-const Button: FC<ButtonProps> = ({ children, className, ...rest }) => {
+export const Button = ({ children, className, ...rest }: ButtonProps) => {
     return (
         <button className={cn(s.button, s['bg-green-box'], className)} {...rest}>
             {children}
         </button>
     );
 };
-
-export default Button;
