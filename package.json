@@ -18,7 +18,7 @@
     "./utils": {
       "import": "./lib/utils/index.js"
     },
-    "./lib/style.css": "./lib/harmony/style.css"
+    "./style.css": "./lib/style.css"
   },
   "typesVersions": {
     "*": {
