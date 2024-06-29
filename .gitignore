@@ -1,0 +1,6 @@
+##### BUILD
+node_modules/
+/lib
+.vscode
+
+*storybook.log
