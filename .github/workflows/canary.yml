@@ -19,7 +19,7 @@ jobs:
       - name: Comment accepted
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           comment-id: ${{ github.event.comment.id }}
           reactions: heart
 
@@ -62,7 +62,7 @@ jobs:
       - name: Comment version to PR
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
             Canary available: `@plex-inc/bricks@${{ steps.canary.outputs.version }}`
