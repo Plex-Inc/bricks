@@ -13,19 +13,16 @@ jobs:
       PR_NUMBER: ${{ github.event.issue.number }}
     steps:
       - name: Auth
-        uses: actions/create-github-app-token@v1
         id: auth
-        with: 
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          
+        run: echo "Authenticated"
+
       - name: Comment accepted
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ steps.auth.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           comment-id: ${{ github.event.comment.id }}
           reactions: heart
-          
+
       - id: branch
         uses: xt0rted/pull-request-comment-branch@v2
         
@@ -43,7 +40,7 @@ jobs:
           key: npm-deps-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-deps-${{ hashFiles('package-lock.json') }}
-            
+
       - name: Setup packages
         run: npm ci
         
@@ -61,11 +58,11 @@ jobs:
           npm version $version --git-tag-version false
           npm publish --tag canary
           echo "version=$version" >> "$GITHUB_OUTPUT"
-          
+
       - name: Comment version to PR
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ steps.auth.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
             Canary available: `@plex-inc/bricks@${{ steps.canary.outputs.version }}`
