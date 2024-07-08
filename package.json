@@ -5,7 +5,10 @@
   "main": "./lib/components/index.js",
   "module": "./lib/components/index.js",
   "types": "./lib/components/index.d.ts",
-  "repository": "https://github.com/Plex-Inc/bricks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plex-Inc/bricks.git"
+  },
   "exports": {
     ".": {
       "import": "./lib/index.js"
