@@ -1,6 +1,6 @@
 name: Publish canary
 
-on: 
+on:
   issue_comment:
     types: [created]
 
@@ -25,15 +25,15 @@ jobs:
 
       - id: branch
         uses: xt0rted/pull-request-comment-branch@v2
-        
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ steps.branch.outputs.head_ref }}
-        
+
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ vars.NODE_VERSION }}
-          
+
       - uses: actions/cache@v3
         with:
           path: node_modules
@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup packages
         run: npm ci
-        
+
       - name: Publish canary to NPM
         id: canary
         env:
@@ -66,5 +66,3 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Canary available: `@plex-inc/bricks@${{ steps.canary.outputs.version }}`
-      
-        

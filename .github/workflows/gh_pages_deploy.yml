@@ -6,7 +6,7 @@ on:
     branches: ['main']
   # Позволяет запустить этот рабочий процесс вручную на вкладке Actions tab
   workflow_dispatch:
-  
+
 # Устанавливает права GITHUB_TOKEN, чтобы разрешить развёртывание на GitHub Pages
 permissions:
   contents: read # Мы разрешаем читать контент из нашего репозитория
@@ -14,8 +14,7 @@ permissions:
   id-token: write # Разрешаем использовать GITHUB_TOKEN
 
 jobs: # Секция jobs определяет этапы процесса
- 
-  deploy:  # Создаётся одна задача deploy, имя может быть любым
+  deploy: # Создаётся одна задача deploy, имя может быть любым
     runs-on: ubuntu-latest # Определяет, в каком окружении будут запущены все команды этой задачи
     steps: # Перечень шагов, команд, которые будут выполнены в этом блоке
       - name: Checkout # Шаг для получения доступа к репозиторию
@@ -29,7 +28,7 @@ jobs: # Секция jobs определяет этапы процесса
         run: npm ci # В ключе run хранится команда, которая будет выполнена в терминале окружения на раннере.
       - name: Build # Шаг сборки storybook
         run: npm run build-storybook # Команда для сборки storybook из вашего блока scripts
-      - name: Setup Pages # Шаг конфигурации сборки 
+      - name: Setup Pages # Шаг конфигурации сборки
         uses: actions/configure-pages@v4 # Используется готовый actions
       - name: Upload artifact # Загружаем артефакты
         uses: actions/upload-pages-artifact@v3
