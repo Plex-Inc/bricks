@@ -1,0 +1,120 @@
+/* WRAPPER */
+.InputWrapper {
+    position: relative;
+}
+
+
+
+.Input {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: var(--font-family);
+    border-radius: var(--radius-sm);
+    border: none;
+    outline: none;
+}
+.Input:focus {
+    outline: 2px solid var(--input-border-brand);
+}
+
+
+
+/* VIEW */
+.Input_default {
+    background-color: var(--input-fill);
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.Input_success {
+    background-color: var(--input-field);
+    color: var(--text-primary);
+    outline: 2px solid var(--base-positive);
+}
+.Input_success:focus {
+    outline: 2px solid var(--base-positive);
+}
+
+.Input_error {
+    background-color: var(--input-field);
+    color: var(--text-primary);
+    outline: 2px solid var(--danger-500);
+}
+.Input_error:focus {
+    outline: 2px solid var(--danger-500);
+}
+
+
+
+/* ERROR */
+.Error {
+    display: flex;
+    padding-top: 4px;
+    gap: 4px;
+}
+.Error_message {
+    color: var(--danger-500);
+}
+
+
+
+/* BACKGROUND */
+.Input_background {
+    background-color: var(--input-fill);
+}
+
+.Input_layer {
+    background-color: var(--input-fill-layer);
+}
+
+
+
+/* ICON */
+/* передавать svg без stroke */
+.Active_icon.Icon { 
+    stroke: var(--text-primary)
+}
+.NoActive_icon {
+    stroke: var(--text-ghost)
+}
+.Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
+.Icon_left {
+    left: 4px;
+}
+.Icon_right {
+    right: 4px;
+}
+.Input_size_s {
+    font-size: 14px;
+    line-height: 24px;
+    padding: var(--gap-xs) var(--gap-s);
+}
+.Input_size_m {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 6px 10px;
+}
+.Input_size_l {
+    font-size: 16px;
+    line-height: 24px;
+    padding: var(--gap-s) 12px;
+}
+.InputWrapper_icon_left {
+    padding-left: 36px;
+}
+
+.InputWrapper_icon_right {
+    padding-right: 36px;
+}
+
+
+
