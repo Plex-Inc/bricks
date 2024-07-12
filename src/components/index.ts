@@ -1,1 +1,5 @@
-export { Button } from './Button/Button';
+import { Text } from './Text/Text';
+
+export const Typography = {
+    Text,
+};
