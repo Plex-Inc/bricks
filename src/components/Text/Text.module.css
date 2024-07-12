@@ -1,0 +1,42 @@
+
+/* SIZE */
+.Size_text_xs {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+}
+.Size_text_s {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+.Size_text_m {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.Size_text_l {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.Text_disabled {
+    color: var(--text-disabled);
+    opacity: 0.9;
+}
+.Text_strong {
+    font-weight: 700;
+}
+
+.TextThinner {
+    font-weight: 200;
+}
+.TextThin {
+    font-weight: 300;
+}
+.TextRegular {
+    font-weight: 400;
+}
+.TextBold {
+    font-weight: 600;
+}
+.TextBolder {
+    font-weight: 800;
+}
