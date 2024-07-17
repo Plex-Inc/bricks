@@ -64,6 +64,7 @@
     "@storybook/react-vite": "8.1.11",
     "@storybook/test": "8.1.11",
     "@types/react": "^18.2.38",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@vitejs/plugin-react": "^4.2.0",
     "@yelo/rollup-node-external": "^1.0.1",
