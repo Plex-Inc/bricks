@@ -1,7 +1,12 @@
 module.exports = {
-    extends: ['airbnb-base', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended'],
+    extends: [
+        'airbnb-base',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+    ],
     parser: '@typescript-eslint/parser',
-    plugins: ['import', 'prettier'],
+    plugins: ['import', 'prettier', 'react'],
     rules: {
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
