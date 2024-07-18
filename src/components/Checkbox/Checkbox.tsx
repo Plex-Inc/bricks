@@ -16,8 +16,8 @@ function IconCheck({ disabled = false }: IconCheck) {
             <svg width="auto" height="auto" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M9 1L4.35355 5.64645C4.15829 5.84171 3.84171 5.84171 3.64645 5.64645L1 3"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                     stroke={!disabled ? '#EBEBED' : 'var(--text-ghost)'}
                 />
             </svg>
