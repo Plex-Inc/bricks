@@ -1,0 +1,84 @@
+/* TABS */
+.Tabs_wrapper {
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-sm);
+}
+
+/* TAB */
+.Tab_Wrapper {
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-time) var(--transition-func);
+    border-radius: var(--radius-s);
+}
+
+
+/* STATE */
+.Tab_Wrapper:hover {
+    color: var(--text-primary);
+}
+.Active_tab {
+    background-color: var(--tab-active);
+}
+
+
+
+/* VIEW */
+.View_layer {
+    background-color: var(--tab-fill);
+}
+.View_background {
+    background-color: var(--input-fill-layer);
+}
+
+
+
+/* SIZE TABS */
+.Tabs_size_xs {
+    padding: var(--gap-xxs);
+}
+.Tabs_size_s {
+    padding: var(--gap-xxs);
+}
+.Tabs_size_m {
+    padding: var(--gap-xs);
+}
+.Tabs_size_l {
+    padding: var(--gap-xs);
+}
+.Tabs_size_xl {
+    padding: var(--gap-xs);
+}
+
+
+/* SIZE TAB */
+.Tab_size_xs {
+    padding: var(--gap-xxs) var(--gap-s);
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+}
+.Tab_size_s {
+    padding: var(--gap-xs) var(--gap-sm);
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+}
+.Tab_size_m {
+    padding: 6px var(--gap-sm);
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+.Tab_size_l {
+    padding: var(--gap-s) var(--gap-m);
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+.Tab_size_xl {
+    padding: var(--gap-m) var(--gap-l);
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
