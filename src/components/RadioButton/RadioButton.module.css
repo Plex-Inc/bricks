@@ -1,0 +1,90 @@
+/* POSITION */
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.WrapperLabel {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.WrapperDisabled {
+    cursor: not-allowed;
+}
+
+.RadioInput {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.RadioButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--base-brand);
+    border-radius: 12px;
+    padding: 4px;
+    transition: all var(--transition-time) var(--transition-func);
+}
+
+
+/* STATE NOCHECKED */
+.Wrapper input:not(:disabled) ~ .RadioButton_default{
+    background-color: transparent;
+    border: 1px solid var(--checkbox-default);
+}
+.Wrapper input:disabled ~ .RadioButton_default{
+    background-color: transparent;
+    border: 1px solid var(--checkbox-disabled);
+}
+.RadioButton_default .NestedButton {
+    background-color: transparent
+}
+.Wrapper:hover input:not(:disabled) ~ .RadioButton_default {
+    border: 1px solid var(--checkbox-hover);
+}
+
+
+.NestedButton {
+    border-radius: 12px;
+}
+
+/* STATE CHECKED */
+.Wrapper input:not(:disabled) ~ .RadioButton_select{
+    border: 1px solid var(--base-brand);
+}
+.Wrapper input:disabled ~ .RadioButton_select{
+    background-color: transparent;
+    border: 1px solid var(--checkbox-disabled);
+}
+.Wrapper input:not(:disabled) ~ .RadioButton_select .NestedButton {
+    background-color: var(--base-brand);
+}
+.Wrapper input:disabled ~ .RadioButton_select .NestedButton {
+    background-color: var(--checkbox-disabled);
+}
+.Wrapper:hover input:not(:disabled) ~ .RadioButton_select .NestedButton {
+    background-color: var(--base-brand-hover);
+}
+.Wrapper:hover input:not(:disabled) ~ .RadioButton_select {
+    border: 1px solid var(--base-brand-hover);
+}
+.Wrapper input:disabled ~ .RadioButton {
+    border-color: var(--checkbox-disabled);
+}
+
+
+/* SIZE */
+.RadioButton_size_m .NestedButton {
+    width: 6px;
+    height: 6px;
+}
+.RadioButton_size_l .NestedButton {
+    width: 10px;
+    height: 10px;
+}
