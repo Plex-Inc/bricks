@@ -1,0 +1,90 @@
+/* POSITION */
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.WrapperLabel {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.WrapperDisabled {
+    cursor: not-allowed;
+}
+
+.checkInput {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.Checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all var(--transition-time) var(--transition-func);
+}
+
+
+.CheckIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Wrapper input:not(:disabled) ~ .CheckBox_default {
+    background-color: transparent;
+    border: 1px solid var(--checkbox-default);
+}
+.Wrapper input:disabled ~ .CheckBox_default {
+    background-color: transparent;
+    border: 1px solid var(--checkbox-disabled);
+}
+.CheckBox_default .checkIcon {
+    display: none;
+}
+
+.Wrapper input:not(:disabled) ~ .CheckBox_select {
+    background-color: var(--base-brand);
+    border: 1px solid var(--base-brand);
+}
+.Wrapper input:disabled ~ .CheckBox_select {
+    background-color: var(--checkbox-disabled);
+    border: 1px solid var(--checkbox-disabled);
+}
+
+.CheckBox_select .checkIcon {
+    display: flex;
+}
+
+
+
+.Wrapper:hover input:not(:disabled) ~ .Checkmark {
+    border-color: var(--checkbox-hover);
+}
+.Wrapper:hover input:disabled ~ .Checkmark {
+    border-color: var(--checkbox-disabled);
+}
+
+
+
+/* SIZE */
+.CheckBox_size_m {
+    width: 14px;
+    height: 14px;
+}
+.CheckBox_size_m .checkIcon svg {
+    width: 10px;
+}
+.CheckBox_size_l {
+    width: 18px;
+    height: 18px;
+}
+.CheckBox_size_l .checkIcon svg {
+    width: 14px;
+}
