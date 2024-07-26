@@ -1,0 +1,21 @@
+.Wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+    width: 100%;
+}
+
+.Not_text {
+    gap: 0px;
+}
+
+.Divider {
+    background: var(--icons-ghost);
+    height: 1px;
+    width: 100%;
+}
+
+.Text {
+    color: var(--text-ghost);
+    font-weight: 400
+}

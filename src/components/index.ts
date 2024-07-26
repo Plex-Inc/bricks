@@ -5,3 +5,4 @@ export const Typography = {
 };
 export { RadioButton } from './RadioButton/RadioButton';
 export { Checkbox } from './Checkbox/Checkbox';
+export { Divider } from './Divider/Divider';
