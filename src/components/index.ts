@@ -5,3 +5,4 @@ export const Typography = {
 };
 export { RadioButton } from './RadioButton/RadioButton';
 export { Checkbox } from './Checkbox/Checkbox';
+export { VerificationBox, VerificationInput } from './VerificationInput/VerificationInput';
