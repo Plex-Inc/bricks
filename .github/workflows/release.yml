@@ -7,6 +7,14 @@ on:
         description: "Type of release"
         required: true
         default: "minor"
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -22,7 +30,7 @@ jobs:
           node-version: ${{ vars.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Prepare environment variables
         run: |
