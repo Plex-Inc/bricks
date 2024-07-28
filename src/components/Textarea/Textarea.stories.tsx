@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { ComponentProps } from 'react';
 
-import { TextareaComponent } from './Textarea';
+import { Textarea } from './Textarea';
 
-const meta: Meta<typeof TextareaComponent> = {
+const meta: Meta<typeof Textarea> = {
     title: 'Example/Textarea',
-    component: TextareaComponent,
+    component: Textarea,
     parameters: {
         layout: 'centered',
     },
@@ -37,7 +37,7 @@ export const Default: Story = {
     },
 };
 
-const Success = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typeof TextareaComponent>) => (
+const Success = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typeof Textarea>) => (
     <div
         style={{
             display: 'flex',
@@ -45,11 +45,11 @@ const Success = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typ
             gap: '16px',
         }}
     >
-        <TextareaComponent placeholder={placeholder} variant="layer" view="success" {...rest} />
+        <Textarea placeholder={placeholder} variant="layer" view="success" {...rest} />
     </div>
 );
 
-const Error = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typeof TextareaComponent>) => (
+const Error = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typeof Textarea>) => (
     <div
         style={{
             display: 'flex',
@@ -57,7 +57,7 @@ const Error = ({ placeholder = 'Type text here', ...rest }: ComponentProps<typeo
             gap: '16px',
         }}
     >
-        <TextareaComponent placeholder={placeholder} variant="layer" view="error" {...rest} />
+        <Textarea placeholder={placeholder} variant="layer" view="error" {...rest} />
     </div>
 );
 
