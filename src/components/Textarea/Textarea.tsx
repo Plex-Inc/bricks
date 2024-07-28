@@ -24,7 +24,7 @@ interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>
     placeholder?: string;
 }
 
-export const TextareaComponent = forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     ({ view = 'default', variant = 'background', placeholder, errorMessage, ref }) => {
         return (
             <div className={s.TextareaWrapper} ref={ref}>
