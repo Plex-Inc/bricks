@@ -32,19 +32,29 @@ jobs:
         run: |
           echo "GITHUB_TOKEN=${{ secrets.PAT_TOKEN }}" >> $GITHUB_ENV
 
+      - name: Generate version
+        id: generate_version
+        run: |
+          VERSION=$(npx semantic-release --dry-run | grep 'New version:' | awk '{print $3}')
+          if [ -z "$VERSION" ]; then
+            echo "Error: VERSION is empty. Please check semantic-release output."
+            exit 1
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+
       - name: Create a feature branch for release
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git checkout -b release-${{ github.event.inputs.version }}
+          git checkout -b release-${{ env.VERSION }}
 
       - name: Run semantic release in a feature branch
         run: |
-          npx semantic-release --branch release-${{ github.event.inputs.version }}
+          npx semantic-release --branch release-${{ env.VERSION }}
 
       - name: Push feature branch
         run: |
-          git push origin release-${{ github.event.inputs.version }}
+          git push origin release-${{ env.VERSION }}
 
       - name: Create pull request
         uses: actions/github-script@v6
@@ -65,5 +75,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pullRequest.number,
-              labels: ['release']
+              labels: ['release'],
+              token: process.env.GITHUB_TOKEN
             });
