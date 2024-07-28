@@ -1,0 +1,63 @@
+name: Create Release Pull Request
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Run semantic release in a feature branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          # Create a feature branch for release
+          git checkout -b release-${{ github.event.inputs.version }}
+
+          # Run semantic-release
+          npx semantic-release --branch release-${{ github.event.inputs.version }}
+
+          # Push the feature branch
+          git push origin release-${{ github.event.inputs.version }}
+
+      - name: Create pull request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: pullRequest } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Release ${process.env.INPUT_VERSION}`,
+              head: `release-${process.env.INPUT_VERSION}`,
+              base: 'main'
+            });
+            console.log(`Created pull request #${pullRequest.number}`);
+
+            // Add a label to the PR
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequest.number,
+              labels: ['release']
+            });
