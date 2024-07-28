@@ -6,7 +6,7 @@ import { glob } from 'glob';
 import react from '@vitejs/plugin-react';
 import external from '@yelo/rollup-node-external';
 
-const ignore = ['src/**/*.d.{ts,tsx}', 'src/**/*.stories.{ts,tsx}', 'src/**/*.stories.d.{ts,tsx}'];
+const ignore = ['src/**/*.d.*', 'src/**/*.stories.*'];
 
 export default defineConfig({
     css: {
@@ -44,7 +44,10 @@ export default defineConfig({
                         plugins: [],
                     },
                 }),
-                dts({ include: ['src'] }),
+                dts({
+                    include: ['src'],
+                    exclude: ignore,
+                }),
             ],
         },
         minify: true,
