@@ -6,6 +6,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   create-pr:
@@ -27,18 +28,22 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      - name: Run semantic release in a feature branch
+      - name: Configure GitHub
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.PAT_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Create a feature branch for release
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-
-          # Create a feature branch for release
           git checkout -b release-${{ github.event.inputs.version }}
 
-          # Run semantic-release
+      - name: Run semantic release in a feature branch
+        run: |
           npx semantic-release --branch release-${{ github.event.inputs.version }}
 
-          # Push the feature branch
+      - name: Push feature branch
+        run: |
           git push origin release-${{ github.event.inputs.version }}
 
       - name: Create pull request
@@ -50,7 +55,8 @@ jobs:
               repo: context.repo.repo,
               title: `Release ${process.env.INPUT_VERSION}`,
               head: `release-${process.env.INPUT_VERSION}`,
-              base: 'main'
+              base: 'main',
+              token: process.env.GITHUB_TOKEN
             });
             console.log(`Created pull request #${pullRequest.number}`);
 
