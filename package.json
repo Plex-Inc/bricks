@@ -1,6 +1,6 @@
 {
   "name": "@plex-inc/bricks",
-  "version": "0.1.0",
+  "version": "1.1.2",
   "description": "Plex Design System",
   "main": "./lib/components/index.js",
   "module": "./lib/components/index.js",
