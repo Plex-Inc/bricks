@@ -113,6 +113,28 @@ export const Positive: Story = {
     },
 };
 
+export const Brand: Story = {
+    args: {
+        text: 'Text me',
+        variant: 'primary',
+        view: 'brand',
+    },
+    argTypes: {
+        variant: {
+            options: ['primary', 'transparent', 'outlined'],
+            control: {
+                type: 'radio',
+            },
+        },
+        size: {
+            options: ['xs', 's', 'm', 'l'],
+            control: {
+                type: 'radio',
+            },
+        },
+    },
+};
+
 const ButtonWithIcon = () => (
     <div
         style={{
@@ -125,6 +147,7 @@ const ButtonWithIcon = () => (
         <Button text="Text me" variant="primary" view="danger" size="l" iconLeft={svgFilterIcon} />
         <Button text="Text me" variant="primary" view="positive" size="l" iconLeft={svgFilterIcon} />
         <Button text="Text me" variant="primary" view="warning" size="l" iconLeft={svgFilterIcon} />
+        <Button text="Text me" variant="primary" view="brand" size="l" iconLeft={svgFilterIcon} />
     </div>
 );
 
