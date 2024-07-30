@@ -90,7 +90,7 @@
 
 
 .Button_ghost_transparent {
-    color: var(--text-primary);
+    color: var(--text-ghost);
 }
 
 .Button_ghost_transparent:hover {
@@ -112,7 +112,7 @@
 
 
 .Button_ghost_outlined {
-    color: var(--text-primary);
+    color: var(--text-ghost);
     border-color: var(--button-ghost);
 }
 
@@ -165,11 +165,11 @@
 
 
 .Button_warning_transparent {
-    color: var(--text-primary);
+    color: var(--text-warn);
 }
 
 .Button_warning_transparent:hover {
-    background: var(--button-warn-hover);
+    background: var(--button-warn-medium);
 }
 
 .Button_warning_transparent:active {
@@ -187,12 +187,12 @@
 
 
 .Button_warning_outlined {
-    color: var(--text-primary);
+    color: var(--text-warn);
     border-color: var(--button-warn);
 }
 
 .Button_warning_outlined:hover {
-    background: var(--button-warn-hover);
+    background: var(--button-warn-medium);
 }
 
 .Button_warning_outlined:active {
@@ -237,11 +237,11 @@
 
 
 .Button_danger_transparent {
-    color: var(--text-primary);
+    color: var(--text-danger);
 }
 
 .Button_danger_transparent:hover {
-    background: var(--button-danger-hover);
+    background: var(--button-danger-medium);
 }
 
 .Button_danger_transparent:active {
@@ -259,12 +259,12 @@
 
 
 .Button_danger_outlined {
-    color: var(--text-primary);
+    color: var(--text-danger);
     border-color: var(--button-danger);
 }
 
 .Button_danger_outlined:hover {
-    background: var(--button-danger-hover);
+    background: var(--button-danger-medium);
 }
 
 .Button_danger_outlined:active {
@@ -309,11 +309,11 @@
 
 
 .Button_positive_transparent {
-    color: var(--text-primary);
+    color: var(--text-positive);
 }
 
 .Button_positive_transparent:hover {
-    background: var(--button-positive-hover);
+    background: var(--button-positive-medium);
 }
 
 .Button_positive_transparent:active {
@@ -331,12 +331,12 @@
 
 
 .Button_positive_outlined {
-    color: var(--text-primary);
+    color: var(--text-positive);
     border-color: var(--button-positive);
 }
 
 .Button_positive_outlined:hover {
-    background: var(--button-positive-hover);
+    background: var(--button-positive-medium);
 }
 
 .Button_positive_outlined:active {
@@ -350,4 +350,75 @@
 .Button_positive_outlined:disabled {
     color: var(--text-disabled);
     border-color: var(--button-positive-disabled);
+}
+
+
+
+
+/* BRAND */
+.Button_brand_primary {
+    color: var(--button-brand-text);
+    background: var(--button-brand);
+}
+
+.Button_brand_primary:hover {
+    background: var(--button-brand-hover);
+}
+
+.Button_brand_primary:active {
+    background: var(--button-brand-active);
+}
+
+.Button_brand_primary:focus {
+    outline: 2px solid var(--button-ghost-focus);
+}
+
+.Button_brand_primary:disabled {
+    color: var(--text-disabled);
+    background: var(--button-brand-disabled);
+}
+
+
+.Button_brand_transparent {
+    color: var(--text-brand);
+}
+
+.Button_brand_transparent:hover {
+    background: var(--button-brand-medium);
+}
+
+.Button_brand_transparent:active {
+    background: var(--button-brand-active);
+}
+
+.Button_brand_transparent:focus {
+    outline: 2px solid var(--button-ghost-focus);
+}
+
+.Button_brand_transparent:disabled {
+    color: var(--text-disabled);
+}
+
+
+
+.Button_brand_outlined {
+    color: var(--text-brand);
+    border-color: var(--button-brand);
+}
+
+.Button_brand_outlined:hover {
+    background: var(--button-brand-medium);
+}
+
+.Button_brand_outlined:active {
+    background: var(--button-brand-active);
+}
+
+.Button_brand_outlined:focus {
+    outline: 2px solid var(--button-ghost-focus);
+}
+
+.Button_brand_outlined:disabled {
+    color: var(--text-disabled);
+    border-color: var(--button-brand-disabled);
 }

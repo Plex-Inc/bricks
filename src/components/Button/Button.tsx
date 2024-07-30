@@ -32,6 +32,11 @@ const variantViewMap = {
         transparent: s.Button_positive_transparent,
         outlined: s.Button_positive_outlined,
     },
+    brand: {
+        primary: s.Button_brand_primary,
+        transparent: s.Button_brand_transparent,
+        outlined: s.Button_brand_outlined,
+    },
 };
 
 const brickMap = {
