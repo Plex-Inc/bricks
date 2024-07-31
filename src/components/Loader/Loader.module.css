@@ -1,0 +1,41 @@
+
+:root{
+    --loader-completed-width: 50%;
+}
+
+.Loader{
+    width: 100%;
+    background-color: var(--base-layer-accent);
+    position: relative;
+}
+
+.LoaderInner{
+    height: 100%;
+    width: var(--loader-completed-width);
+    background-color: var(--base-brand);
+    border-radius: inherit;
+    text-align: right;
+    transition: width var(--transition-time) linear;
+}
+
+.LoaderPlaceholder{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: var(--text-primary);
+    margin: auto;
+}
+
+.Loader_size_xs{
+    height: 4px;
+}
+
+.Loader_size_s{
+    height: 12px;
+}
+
+.Loader_size_m{
+    height: 20px;
+}
