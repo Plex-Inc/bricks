@@ -1,0 +1,39 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.Spinner {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.SpinnerInner {
+    padding: 4px;
+    background: var(--base-brand);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    -webkit-mask:
+      conic-gradient(#0000,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    box-sizing: border-box;
+    animation: spin var(--spinner-animation-time, 2s) linear infinite;
+  }
+
+.Spinner_size_s{
+    width: 24px;
+}
+
+.Spinner_size_m{
+    width: 32px;
+}
+
+.Spinner_size_l{
+    width: 40px;
+}
