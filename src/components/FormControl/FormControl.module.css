@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.error {
+    color: var(--danger-500);
+    font-size: var(--gap-sm);
+}
+
+.label {
+    color: var(--base-light-5);
+    font-size: var(--gap-m);
+}

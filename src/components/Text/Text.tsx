@@ -44,7 +44,7 @@ const headingClasses: Record<HeadingTags, [string, string]> = {
 
 type TextProps<T extends keyof Tags> = {
     as: keyof Tags;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     size?: keyof typeof textSizeMap;
     isDisabled?: boolean;
     strong?: boolean;
