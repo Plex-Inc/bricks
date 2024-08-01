@@ -1,0 +1,68 @@
+.SwitchLabel{
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+    cursor: pointer;
+}
+
+.Switch_size_m{
+    --switch-width: var(--switch-width-m);
+    --switch-height: var(--switch-height-m);
+    --circle-size: calc(var(--switch-height-m) - 6px);
+}
+
+.Switch_size_l{
+    --switch-width: var(--switch-width-l);
+    --switch-height: var(--switch-height-l);
+    --circle-size: calc(var(--switch-height-l) - 6px);
+}
+
+.SwitchButton{
+    --switch-transition-time: 400ms;
+    --switch-translate: translateX(calc(var(--switch-width) - var(--circle-size)));
+
+    display: flex;
+    align-items: center;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    -webkit-transition: var(--switch-transition-time);
+    transition: var(--switch-transition-time);
+    padding:  0px 3px;
+    background-color: var(--switch-off);
+    border-radius: 17px;
+}
+
+.SliderInput{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.SwitchSlider{
+    height: var(--circle-size);
+    width: var(--circle-size);
+    background-color: white;
+    -webkit-transition: var(--switch-transition-time);
+    transition: var(--switch-transition-time);
+    border-radius: 50%;
+}
+
+ .SwitchButton:has(.SliderInput:checked){
+    background-color: var(--button-brand);
+}
+
+.SwitchButton:has(.SliderInput:focus){
+    box-shadow: 0 0 1px var(--button-brand);
+}
+
+.SliderInput:checked + .SwitchSlider {
+    -webkit-transform: var(--switch-translate);
+    -ms-transform: var(--switch-translate);
+    transform: var(--switch-translate);
+}
+
+.SwitchDisabled{
+    opacity: .8;
+    cursor: not-allowed;
+} 

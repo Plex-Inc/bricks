@@ -646,4 +646,8 @@
   --circle-xxl: 2.5rem;
   --circle-xxxl: 3rem;
   --circle-large: 3.25rem;
+  --switch-width-m: 2.25rem;
+  --switch-height-m: 1.25rem; 
+  --switch-width-l: 2.5rem;
+  --switch-height-l: 1.5rem; 
 }
