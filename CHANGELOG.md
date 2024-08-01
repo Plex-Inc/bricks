@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/Plex-Inc/bricks/compare/v1.2.0...v1.3.0) (2024-08-01)
+
+
+### Features
+
+* loader component ([3f53828](https://github.com/Plex-Inc/bricks/commit/3f53828dc8c3d998aae58350ffb238c44c313c36))
+* spinner component ([0bc82da](https://github.com/Plex-Inc/bricks/commit/0bc82da609416dd2ff706d28d813005828fb668d))
+
 # [1.2.0](https://github.com/Plex-Inc/bricks/compare/v1.1.2...v1.2.0) (2024-07-30)
 
 
