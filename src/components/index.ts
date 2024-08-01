@@ -14,3 +14,4 @@ export { Loader } from './Loader/Loader';
 export { Spinner } from './Spinner/Spinner';
 export { Circle } from './Circle/Circle';
 export { Avatar } from './Avatar/Avatar';
+export { Switch } from './Switch/Switch';
