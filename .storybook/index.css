@@ -1,7 +1,7 @@
 :root {
   /* Admin | Dark
   /* color */
-  --font-family: "Nunito Sans";
+  --font-family: "Nunito Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif";
   --transition-time: 250ms;
   --transition-func: cubic-bezier(.4,.0,.23,1);
   --base-background: var(--base-dark-1);
