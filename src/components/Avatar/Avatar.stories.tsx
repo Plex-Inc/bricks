@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Circle } from './Circle';
+import { Avatar } from './Avatar';
 
-const meta: Meta<typeof Circle> = {
-    title: 'Example/Circle',
-    component: Circle,
+const meta: Meta<typeof Avatar> = {
+    title: 'Example/Avatar',
+    component: Avatar,
     parameters: {
         layout: 'centered',
     },
@@ -15,10 +15,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const BaseCircle: Story = {
+export const BaseAvatar: Story = {
     args: {
-        size: 'xxl',
-        str: 'KING IVAN',
+        size: 'l',
+        name: 'KING IVAN',
     },
     argTypes: {
         size: {
