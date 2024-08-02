@@ -637,4 +637,13 @@
   --gap-xl: 1.5rem;
   --radius-xxl: 1.5rem;
   --gap-xxl: 2rem;
+  --circle-xxs: 1rem;
+  --circle-xs: 1.25rem;
+  --circle-s: 1.5rem;
+  --circle-m: 1.75rem;
+  --circle-l: 2rem;
+  --circle-xl: 2.25rem;
+  --circle-xxl: 2.5rem;
+  --circle-xxxl: 3rem;
+  --circle-large: 3.25rem;
 }

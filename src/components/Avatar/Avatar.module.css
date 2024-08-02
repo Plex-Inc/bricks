@@ -1,43 +1,38 @@
-.Circle_xxs{
+.Avatar_xxs{
     --circle-size: var(--circle-xxs);
 }
-.Circle_xs{
+.Avatar_xs{
     --circle-size: var(--circle-xs);
 }
-.Circle_s{
+.Avatar_s{
     --circle-size: var(--circle-s);
 }
-.Circle_m{
+.Avatar_m{
     --circle-size: var(--circle-m);
 }
-.Circle_l{
+.Avatar_l{
     --circle-size: var(--circle-l);
 }
-.Circle_xl{
+.Avatar_xl{
     --circle-size: var(--circle-xl);
 }
-.Circle_xxl{
+.Avatar_xxl{
     --circle-size: var(--circle-xxl);
 }
-.Circle_xxxl{
+.Avatar_xxxl{
     --circle-size: var(--circle-xxxl);
 }
-.Circle_large{
+.Avatar_large{
     --circle-size: var(--circle-large);
 }
 
 
 
-.Circle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Avatar{
+    border: none;
+    outline: none;
     border-radius: 100%;
     width: var(--circle-size);
     height: var(--circle-size);
-
-    letter-spacing: -1.5px;
-    font-size: calc((var(--circle-size) / 2) - 2px);
-    font-weight: 600;
-    user-select: none;
 }
+
