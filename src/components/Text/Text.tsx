@@ -43,7 +43,7 @@ const headingClasses: Record<HeadingTags, [string, string]> = {
 };
 
 type TextProps<T extends keyof Tags> = {
-    as: keyof Tags;
+    as?: keyof Tags;
     children: React.ReactNode;
     size?: keyof typeof textSizeMap;
     isDisabled?: boolean;
@@ -71,7 +71,7 @@ export const Text = <T extends typeof defaultTagName>({
         <Tag
             {...rest}
             className={cn(
-                calcTextSizes(as, size),
+                calcTextSizes(Tag, size),
                 { [s.Text_strong]: strong, [s.Text_disabled]: isDisabled },
                 textSizeMap[size],
                 className,
