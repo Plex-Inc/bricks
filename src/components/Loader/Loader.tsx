@@ -17,13 +17,17 @@ interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
     placeholder?: string;
 }
 export const Loader: React.FC<LoaderProps> = ({ size = 's', value, placeholder, className, ...rest }) => {
-    if (value > 100) value = 100;
-    if (value < 0) value = 0;
     const styles: Record<string, unknown> = useMemo(() => {
+        let val = value;
+
+        if (val > 100) val = 100;
+        if (val < 0) val = 0;
+
         return {
-            '--loader-completed-width': `${value}%`,
+            '--loader-completed-width': `${val}%`,
         };
     }, [value]);
+
     return (
         <div className={cn(s.Loader, className)}>
             <div
@@ -33,7 +37,7 @@ export const Loader: React.FC<LoaderProps> = ({ size = 's', value, placeholder, 
                 {...rest}
             ></div>
             {nullable(size === 'm' && placeholder, () => (
-                <Text as={'h5'} className={cn(s.LoaderPlaceholder)}>
+                <Text size="s" className={cn(s.LoaderPlaceholder)}>
                     {placeholder}
                 </Text>
             ))}
