@@ -1,0 +1,38 @@
+.Tooltip {
+    padding: var(--gap-s) var(--gap-sm);
+}
+
+.Tooltip_default {
+    background: var(--base-dropdown);
+}
+
+.Tooltip_success {
+    color: var(--text-light-primary);
+    background: var(--base-positive);
+}
+
+.Tooltip_danger {
+    color: var(--text-light-primary);
+    background: var(--base-danger);
+}
+
+.Tooltip_warning {
+    color: var(--text-light-primary);
+    background: var(--base-warn);
+}
+
+.Tooltip_default [data-popper-arrow]::before {
+    background: var(--base-dropdown);
+}
+
+.Tooltip_success [data-popper-arrow]::before {
+    background: var(--base-positive);
+}
+
+.Tooltip_danger [data-popper-arrow]::before {
+    background: var(--base-danger);
+}
+
+.Tooltip_warning [data-popper-arrow]::before {
+    background: var(--base-warn);
+}
