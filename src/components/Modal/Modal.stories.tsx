@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 
 import { Button } from '../Button/Button';
 
-import { CloseModal, Modal, ModalHeader, TextHeaderModal } from './Modal';
-import s from './Modal.module.css';
+import { ModalCloseButton, Modal, ModalHeader, ModalHeaderText } from './Modal';
 
 const meta: Meta<typeof Modal> = {
     title: 'Example/Modal',
@@ -50,16 +49,14 @@ const Default: Story = {
                 <Button text="Click me" view="ghost" size="l" onClick={() => setView(true)} />
                 <Modal isOpen={view} onClose={() => setView(false)}>
                     <ModalHeader>
-                        <TextHeaderModal title="Раскрытие меню">
-                            <span className={s.Back_icon} onClick={() => {}}>
-                                <BackImg />
-                            </span>
-                        </TextHeaderModal>
-                        <CloseModal>
+                        <ModalHeaderText title="Раскрытие меню">
+                            <BackImg />
+                        </ModalHeaderText>
+                        <ModalCloseButton>
                             <span style={{ display: 'flex', alignItems: 'center' }} onClick={() => setView(false)}>
                                 <CloseImg />
                             </span>
-                        </CloseModal>
+                        </ModalCloseButton>
                     </ModalHeader>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                         <div style={{ color: '#FFF' }}>open modal</div>

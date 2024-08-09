@@ -14,14 +14,6 @@
     height: 100%;
 
     background: rgba(0, 0, 0, 0.3);
-    
-    @media (max-width: 640px) {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: auto;
-        align-items: end;
-    }
 }
 
 
@@ -36,12 +28,25 @@
     max-width: 580px;
     width: 100%;
     animation: slideIn 0.3s ease-in-out;
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+    .Wrapper {
         max-width: 100%;
         width: 100%;
     }
-    @media (max-width: 640px) {
+}
+
+@media (max-width: 640px) {
+    .ModalOverlay {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        align-items: end;
+    }
+
+    .Wrapper {
         border-radius: var(--radius-m) var(--radius-m) 0px 0px;
         height: 50%;
     }
@@ -64,6 +69,7 @@
 }
 .HeaderLeft {
     display: flex;
+    align-items: center;
     gap: var(--gap-m);
 }
 .HeaderRight {
@@ -88,23 +94,13 @@
 
 
 
-
-.Back_icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-
-
 @keyframes slideIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
