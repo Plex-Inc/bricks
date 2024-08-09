@@ -18,3 +18,4 @@ export { Switch } from './Switch/Switch';
 export { Popup } from './Popup/Popup';
 export { MenuItem } from './MenuItem/MenuItem';
 export { Tooltip } from './Tooltip/Tooltip';
+export { FormControl, FormControlError, FormControlInput, FormControlLabel } from './FormControl/FormControl';
