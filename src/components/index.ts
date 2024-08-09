@@ -16,3 +16,4 @@ export { Circle } from './Circle/Circle';
 export { Avatar } from './Avatar/Avatar';
 export { Switch } from './Switch/Switch';
 export { Popup } from './Popup/Popup';
+export { MenuItem } from './MenuItem/MenuItem';
