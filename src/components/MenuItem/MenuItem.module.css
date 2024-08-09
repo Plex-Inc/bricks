@@ -1,0 +1,18 @@
+.MenuItem {
+    padding: var(--gap-s) var(--gap-sm);
+    border-radius: var(--radius-s);
+    transition: all var(--transition-time) var(--transition-func);
+}
+
+.MenuItem:not(.MenuItem_disabled):hover {
+    background-color: var(--base-hover);
+    cursor: pointer;
+}
+
+.MenuItem:not(.MenuItem_disabled):active {
+    background-color: var(--base-layer-accent);
+}
+
+.MenuItem_disabled {
+    color: var(--text-disabled);
+}
