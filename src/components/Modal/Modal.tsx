@@ -23,27 +23,27 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     isCloseIcon?: boolean;
 }
 
-export interface CloseModal {
+export interface ModalCloseButtonProps {
     className?: string;
     children: React.ReactNode;
 }
 
-export interface TextHeaderModal {
+export interface ModalHeaderTextProps {
     title: string;
     children?: ReactNode;
 }
 
-export type ModalHeaderType = Omit<ModalProps, 'className' | 'isOpen'>;
+export type ModalHeaderProps = Omit<ModalProps, 'className' | 'isOpen'>;
 
 export const ModalOverlay = ({ children }: PropsWithChildren) => <div className={cn(s.ModalOverlay)}>{children}</div>;
 
-export const CloseModal = ({ children, ...props }: CloseModal) => (
+export const ModalCloseButton = ({ children, ...props }: ModalCloseButtonProps) => (
     <button className={s.HeaderRight} {...props}>
         {children}
     </button>
 );
 
-export const TextHeaderModal = ({ title, children }: TextHeaderModal) => (
+export const ModalHeaderText = ({ title, children }: ModalHeaderTextProps) => (
     <div className={s.HeaderLeft}>
         {children}
         <Text as="span" size="l" strong>
@@ -52,7 +52,7 @@ export const TextHeaderModal = ({ title, children }: TextHeaderModal) => (
     </div>
 );
 
-export const ModalHeader = ({ size = 'm', children }: ModalHeaderType) => {
+export const ModalHeader = ({ size = 'm', children }: ModalHeaderProps) => {
     return <div className={cn(s.Header, sizeMap[size])}>{children}</div>;
 };
 
