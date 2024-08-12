@@ -53,6 +53,10 @@
     background-color: var(--base-brand);
     border: 1px solid var(--base-brand);
 }
+.Wrapper input:not(:disabled) ~ .CheckBox_select:hover {
+    background-color: var(--base-brand-hover);
+    border: 1px solid var(--base-brand);
+}
 .Wrapper input:disabled ~ .CheckBox_select {
     background-color: var(--checkbox-disabled);
     border: 1px solid var(--checkbox-disabled);
