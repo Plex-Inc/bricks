@@ -8,12 +8,15 @@ import s from './Checkbox.module.css';
 
 interface IconCheck {
     disabled: boolean;
+    size: 'm' | 'l';
 }
 
-function IconCheck({ disabled = false }: IconCheck) {
+// использовать иконку из либы иконок
+function IconCheck({ disabled = false, size }: IconCheck) {
+    const ctx = size === 'm' ? '10' : '13';
     return (
         <span className={s.CheckIcon}>
-            <svg width="auto" height="auto" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width={ctx} height={ctx} viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M9 1L4.35355 5.64645C4.15829 5.84171 3.84171 5.84171 3.64645 5.64645L1 3"
                     strokeWidth="1.5"
@@ -70,7 +73,9 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckBoxProps>(
                             [s.CheckBox_select]: checked,
                         })}
                     >
-                        <IconCheck disabled={disabled} />
+                        {nullable(checked, () => (
+                            <IconCheck size={size} disabled={disabled} />
+                        ))}
                     </span>
                     {nullable(label && positionText === 'right', () => (
                         <Text as={as} size={textSize} isDisabled={disabled} strong={strong}>

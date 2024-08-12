@@ -62,7 +62,8 @@ const Labeled = () => {
                 as="span"
                 label={'text me'}
                 checked={isNotChecked}
-                size="l"
+                textSize="m"
+                size="m"
             />
             <CheckboxComponent positionText="right" as="span" disabled label={'text me'} checked size="l" />
             <CheckboxComponent positionText="right" as="span" disabled label={'text me'} checked={false} size="l" />
