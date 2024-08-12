@@ -90,7 +90,7 @@
 
 
 .Button_ghost_transparent {
-    color: var(--text-ghost);
+    color: var(--text-primary);
 }
 
 .Button_ghost_transparent:hover {
@@ -112,7 +112,7 @@
 
 
 .Button_ghost_outlined {
-    color: var(--text-ghost);
+    color: var(--text-primary);
     border-color: var(--button-ghost);
 }
 
