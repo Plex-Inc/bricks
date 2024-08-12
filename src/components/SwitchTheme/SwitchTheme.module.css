@@ -1,0 +1,56 @@
+.Wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.Box {
+  border: 1.5px solid var(--base-layer);
+  display: flex;
+  align-items: center;
+  height: 24px;
+  width: 50px;
+  border-radius: var(--radius-s);
+  padding: 2px;
+}
+
+.Checked {
+  position: relative;
+  width: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-func) var(--transition-time);
+}
+
+.LightChecked {
+  transform: translateX(26px);
+}
+
+.SunIcon_left {
+  position: absolute;
+  left: 6px;
+}
+
+.MoonIcon_right {
+  position: absolute;
+  right: 6px;
+}
+
+.Icon {
+  border-radius: var(--radius-xs);
+  padding: 4px;
+  background-color: var(--base-layer);
+}
+
+.MoonIcon_checked {
+  color: #0a88ff;
+}
+
+.SunIcon_checked {
+  color: #f0b90b; 
+}
+
+.Icon_none {
+  display: none;
+}
