@@ -8,6 +8,7 @@
 /* TAB */
 .Tab_Wrapper {
     background: transparent;
+    cursor: pointer;
     color: var(--text-secondary);
     font-weight: 400;
     font-family: var(--font-family);
