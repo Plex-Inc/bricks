@@ -1,3 +1,23 @@
+# [1.5.0](https://github.com/Plex-Inc/bricks/compare/v1.4.0...v1.5.0) (2024-08-13)
+
+
+### Bug Fixes
+
+* button ([408c155](https://github.com/Plex-Inc/bricks/commit/408c155fdac86d2ff4f96490c0489e147cdeb407))
+* checkbox ([b25cdbf](https://github.com/Plex-Inc/bricks/commit/b25cdbf503d0bb1e0d0c82f626dfe1acff22df7f))
+* input ([493f3e2](https://github.com/Plex-Inc/bricks/commit/493f3e26eec544b5a7d0a23dde6b0e53917b9638))
+* radioButton ([cc4fa6f](https://github.com/Plex-Inc/bricks/commit/cc4fa6fbcb4ddf62cba180dd3c6093ce8d87873b))
+* tab ([fabe3cc](https://github.com/Plex-Inc/bricks/commit/fabe3ccfc6e0f4337b9b437d6efcea76692ac551))
+* text ([8cd5b0e](https://github.com/Plex-Inc/bricks/commit/8cd5b0eb38ec825cae94bbaefa580d8f324d1abf))
+* textarea ([ae05453](https://github.com/Plex-Inc/bricks/commit/ae05453d813aa81900c47ac12536bcaba36a926b))
+* verification input ([c0bea9e](https://github.com/Plex-Inc/bricks/commit/c0bea9e96ee9c6b5381258b5eefd1992ad3aa809))
+
+
+### Features
+
+* divider component ([a754d52](https://github.com/Plex-Inc/bricks/commit/a754d5298f2e837da14bfa0933ee4a9944c63c5b))
+* switchTheme component ([b981991](https://github.com/Plex-Inc/bricks/commit/b981991d458e00338e33d414ca84d721d015e6d6))
+
 # [1.4.0](https://github.com/Plex-Inc/bricks/compare/v1.3.0...v1.4.0) (2024-08-09)
 
 
