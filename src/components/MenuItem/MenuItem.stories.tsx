@@ -20,7 +20,7 @@ const MenuItemList = () => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             {Array.from({ length: 6 }).map((_, index) => (
                 <MenuItem key={index}>
-                    <Text size="text_s">Item {index + 1}</Text>
+                    <Text>Item {index + 1}</Text>
                 </MenuItem>
             ))}
         </div>

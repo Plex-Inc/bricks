@@ -19,7 +19,7 @@ export const CheckboxDefault: Story = {
     args: {
         checked: true,
         positionText: 'right',
-        label: '',
+        label: 'dedede',
     },
     argTypes: {
         checked: {

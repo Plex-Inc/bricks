@@ -7,15 +7,20 @@ import { nullable } from '../../utils';
 import s from './Switch.module.css';
 
 export const sizeMap = {
-    text_m: s.Switch_size_m,
-    text_l: s.Switch_size_l,
+    m: s.Switch_size_m,
+    l: s.Switch_size_l,
 };
+
+const sizeSwitch = {
+    m: 'text_m',
+    l: 'text_l',
+} as const;
 
 interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     checked: boolean;
     label?: React.ReactNode;
     positionText?: 'left' | 'right';
-    size: keyof typeof sizeMap;
+    size: keyof typeof sizeSwitch;
     as?: keyof Tags;
     strong?: boolean;
 }
@@ -25,7 +30,7 @@ export const Switch: React.FC<SwitchProps> = ({
     className,
     label,
     as = 'div',
-    size = 'text_m',
+    size = 'l',
     positionText = 'right',
     disabled,
     strong,
@@ -34,7 +39,7 @@ export const Switch: React.FC<SwitchProps> = ({
     return (
         <label className={cn(s.SwitchLabel, { [s.SwitchDisabled]: disabled }, className)}>
             {nullable(label && positionText === 'left', () => (
-                <Text size={size} as={as} strong={strong}>
+                <Text size={sizeSwitch[size]} as={as} strong={strong}>
                     {label}
                 </Text>
             ))}
@@ -43,7 +48,7 @@ export const Switch: React.FC<SwitchProps> = ({
                 <span className={cn(s.SwitchSlider)}></span>
             </div>
             {nullable(label && positionText === 'right', () => (
-                <Text size={size} as={as} strong={strong}>
+                <Text size={sizeSwitch[size]} as={as} strong={strong}>
                     {label}
                 </Text>
             ))}

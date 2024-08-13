@@ -16,7 +16,7 @@ export interface Tags {
     h6: React.JSX.IntrinsicElements['h6'];
 }
 
-export const textSizeMap = {
+const textSizeMap = {
     text_xs: s.Size_text_xs,
     text_s: s.Size_text_s,
     text_m: s.Size_text_m,

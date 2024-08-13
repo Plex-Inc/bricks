@@ -1,8 +1,8 @@
-import React, { InputHTMLAttributes, MutableRefObject, forwardRef } from 'react';
+import React, { InputHTMLAttributes, MutableRefObject, forwardRef, useMemo } from 'react';
 import cn from 'classnames';
 
 import { nullable } from '../../utils';
-import { Text, type Tags, type textSizeMap } from '../Text/Text';
+import { Text, type Tags } from '../Text/Text';
 
 import s from './Checkbox.module.css';
 
@@ -38,7 +38,6 @@ interface CheckBoxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'siz
     disabled?: boolean;
     label?: React.ReactNode;
     as?: keyof Tags;
-    textSize?: keyof typeof textSizeMap;
     positionText?: 'left' | 'right';
     strong?: boolean;
     size: keyof typeof sizeMap;
@@ -46,39 +45,36 @@ interface CheckBoxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'siz
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckBoxProps>(
     (
-        {
-            disabled = false,
-            label,
-            as = 'div',
-            strong,
-            textSize = 'text_l',
-            size = 'm',
-            positionText = 'right',
-            checked,
-            ...rest
-        },
+        { disabled = false, label, as = 'div', strong, size = 'm', positionText = 'right', checked, ...rest },
         forwardedRef,
     ) => {
+        const sizes: { size: CheckBoxProps['size']; textSize: 'text_m' | 'text_l' } = useMemo(() => {
+            if (size === 'm') {
+                return { size, textSize: 'text_m' };
+            }
+            return { size, textSize: 'text_l' };
+        }, [size]);
+
         return (
             <label className={cn(s.WrapperLabel, { [s.WrapperDisabled]: disabled })} ref={forwardedRef}>
                 <div className={cn(s.Wrapper)}>
                     {nullable(label && positionText === 'left', () => (
-                        <Text as={as} size={textSize} isDisabled={disabled} strong={strong}>
+                        <Text as={as} size={sizes.textSize} isDisabled={disabled} strong={strong}>
                             {label}
                         </Text>
                     ))}
                     <input type="checkbox" disabled={disabled} className={s.checkInput} checked={checked} {...rest} />
                     <span
-                        className={cn(s.Checkmark, s.CheckBox_default, sizeMap[size], {
+                        className={cn(s.Checkmark, s.CheckBox_default, sizeMap[sizes.size], {
                             [s.CheckBox_select]: checked,
                         })}
                     >
                         {nullable(checked, () => (
-                            <IconCheck size={size} disabled={disabled} />
+                            <IconCheck size={sizes.size} disabled={disabled} />
                         ))}
                     </span>
                     {nullable(label && positionText === 'right', () => (
-                        <Text as={as} size={textSize} isDisabled={disabled} strong={strong}>
+                        <Text as={as} size={sizes.textSize} isDisabled={disabled} strong={strong}>
                             {label}
                         </Text>
                     ))}
