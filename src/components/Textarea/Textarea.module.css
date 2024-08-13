@@ -29,7 +29,7 @@
 /* VIEW */
 .Textarea_default {
     background-color: var(--input-fill);
-    color: var(--text-ghost);
+    color: var(--text-primary);
 }
 
 .Textarea_field {
