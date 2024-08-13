@@ -1,0 +1,78 @@
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--gap-xs);
+    font-family: var(--font-family);
+}
+
+.InputWrapper {
+    display: flex;
+    gap: var(--gap-s);
+    align-items: center;
+}
+
+.VerificationInput {
+    background: var(--input-fill-layer);
+    border-radius: var(--radius-s);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    caret-color: transparent;
+}
+
+.VerificationInput:focus {
+    border: 1px solid var(--input-border-brand);
+    outline: none;
+}
+  
+
+
+
+/* SIZE */
+
+.Input_size_s {
+    padding: var(--gap-xs);
+    width: 2rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
+}
+
+.Input_size_m {
+    padding: var(--gap-s);
+    width: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+.Input_size_l {
+    padding: var(--gap-m);
+    width: 3rem;
+    font-size: 3rem;
+    line-height: 3.25rem;
+}
+
+
+/* VIEW */
+
+.DefaultInput {
+    border: 1px solid var(--base-layer-border);
+    color: var(--text-primary);
+}
+
+.ErrorInput {
+    border: 1px solid var(--base-danger);
+    color: var(--text-danger);
+}
+.ErrorInput:focus {
+    border: 1px solid var(--base-danger);
+}
+
+.SuccessInput {
+    border: 1px solid var(--base-positive);
+    color: var(--text-positive);
+}
+.SuccessInput:focus {
+    border: 1px solid var(--base-positive);
+}
