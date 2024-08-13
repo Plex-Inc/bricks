@@ -52,7 +52,7 @@ const Labeled = () => {
                 onChange={(e) => setIsChecked(e.target.checked)}
                 positionText="right"
                 as="span"
-                label={'text me'}
+                label="text me"
                 checked={isChecked}
                 size="l"
             />
@@ -60,13 +60,12 @@ const Labeled = () => {
                 onChange={(e) => setIsNotChecked(e.target.checked)}
                 positionText="right"
                 as="span"
-                label={'text me'}
+                label="text me"
                 checked={isNotChecked}
-                textSize="text_m"
                 size="m"
             />
-            <CheckboxComponent positionText="right" as="span" disabled label={'text me'} checked size="l" />
-            <CheckboxComponent positionText="right" as="span" disabled label={'text me'} checked={false} size="l" />
+            <CheckboxComponent positionText="right" as="span" disabled label="text me" checked size="l" />
+            <CheckboxComponent positionText="right" as="span" disabled label="text me" checked={false} size="l" />
         </div>
     );
 };

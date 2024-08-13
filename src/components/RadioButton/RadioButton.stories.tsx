@@ -53,7 +53,6 @@ const Labeled = () => {
         >
             <RadioButtonComponent
                 label="text me"
-                textSize="text_l"
                 positionText="right"
                 as="span"
                 value={'1'}
@@ -63,7 +62,6 @@ const Labeled = () => {
             />
             <RadioButtonComponent
                 label="text me"
-                textSize="text_m"
                 positionText="right"
                 as="span"
                 value={'2'}
@@ -71,24 +69,8 @@ const Labeled = () => {
                 checked={checked === '2'}
                 size="m"
             />
-            <RadioButtonComponent
-                label="disabled"
-                textSize="text_l"
-                positionText="right"
-                as="span"
-                disabled
-                checked={true}
-                size="l"
-            />
-            <RadioButtonComponent
-                label="disabled"
-                textSize="text_l"
-                positionText="right"
-                as="span"
-                disabled
-                checked={false}
-                size="l"
-            />
+            <RadioButtonComponent label="disabled" positionText="right" as="span" disabled checked={true} size="l" />
+            <RadioButtonComponent label="disabled" positionText="right" as="span" disabled checked={false} size="l" />
         </div>
     );
 };
