@@ -44,21 +44,24 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-    ({
-        className,
-        iconLeft,
-        iconRight,
-        view = 'default',
-        variant = 'background',
-        size = 's',
-        autoComplete = 'none',
-        outline,
-        pointerEvents,
-        autoFocus,
-        placeholder,
-        forwardedRef,
-        ...rest
-    }) => {
+    (
+        {
+            className,
+            iconLeft,
+            iconRight,
+            view = 'default',
+            variant = 'background',
+            size = 's',
+            autoComplete = 'none',
+            outline,
+            pointerEvents,
+            autoFocus,
+            placeholder,
+            forwardedRef,
+            ...rest
+        },
+        ref,
+    ) => {
         const inputRef = useRef<HTMLInputElement>(null);
 
         useEffect(() => {
@@ -87,6 +90,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         [s.InputWrapper_icon_left]: iconLeft,
                         [s.InputWrapper_icon_right]: iconRight,
                     })}
+                    ref={ref}
                     placeholder={placeholder}
                     autoComplete={autoComplete}
                     autoFocus={autoFocus}

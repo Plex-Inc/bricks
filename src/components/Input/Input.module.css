@@ -1,11 +1,13 @@
 /* WRAPPER */
 .InputWrapper {
     position: relative;
+    width: 100%;
 }
 
 
 
 .Input {
+    width: -webkit-fill-available;
     font-size: 14px;
     line-height: 24px;
     font-weight: 400;
