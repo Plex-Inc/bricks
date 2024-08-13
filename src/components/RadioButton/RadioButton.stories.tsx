@@ -63,13 +63,13 @@ const Labeled = () => {
             />
             <RadioButtonComponent
                 label="text me"
-                textSize="l"
+                textSize="m"
                 positionText="right"
                 as="span"
                 value={'2'}
                 onChange={(e) => setChecked(e.target.value)}
                 checked={checked === '2'}
-                size="l"
+                size="m"
             />
             <RadioButtonComponent
                 label="disabled"
