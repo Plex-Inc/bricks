@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const TextStory: Story = {
     args: {
-        size: 's',
+        size: 'text_s',
         children: 'Text me',
     },
     argTypes: {

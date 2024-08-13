@@ -17,6 +17,35 @@
     line-height: 1.75rem;
 }
 
+
+.Size_heading_l {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+.Size_heading_xl {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+.Size_heading_xxl {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+}
+
+
+.Size_display_l {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+.Size_display_xl {
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+.Size_display_xxl {
+    font-size: 3rem;
+    line-height: 3.375rem;
+}
+
+
 .Text_disabled {
     color: var(--text-disabled);
     opacity: 0.9;

@@ -46,7 +46,7 @@ export const ModalCloseButton = ({ children, ...props }: ModalCloseButtonProps) 
 export const ModalHeaderText = ({ title, children }: ModalHeaderTextProps) => (
     <div className={s.HeaderLeft}>
         {children}
-        <Text as="span" size="l" strong>
+        <Text as="span" size="text_l" strong>
             {title}
         </Text>
     </div>

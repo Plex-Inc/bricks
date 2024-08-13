@@ -32,7 +32,7 @@ export const RadioButton = forwardRef<HTMLLabelElement, RadioButtonProps>(
             label,
             value,
             as = 'div',
-            textSize = 'l',
+            textSize = 'text_l',
             positionText = 'right',
             strong,
             size = 'm',

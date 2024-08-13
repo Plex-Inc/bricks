@@ -37,7 +37,7 @@ export const Loader: React.FC<LoaderProps> = ({ size = 's', value, placeholder, 
                 {...rest}
             ></div>
             {nullable(size === 'm' && placeholder, () => (
-                <Text size="s" className={cn(s.LoaderPlaceholder)}>
+                <Text size="text_s" className={cn(s.LoaderPlaceholder)}>
                     {placeholder}
                 </Text>
             ))}

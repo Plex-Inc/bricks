@@ -53,7 +53,7 @@ const Labeled = () => {
         >
             <RadioButtonComponent
                 label="text me"
-                textSize="l"
+                textSize="text_l"
                 positionText="right"
                 as="span"
                 value={'1'}
@@ -63,7 +63,7 @@ const Labeled = () => {
             />
             <RadioButtonComponent
                 label="text me"
-                textSize="m"
+                textSize="text_m"
                 positionText="right"
                 as="span"
                 value={'2'}
@@ -73,7 +73,7 @@ const Labeled = () => {
             />
             <RadioButtonComponent
                 label="disabled"
-                textSize="l"
+                textSize="text_l"
                 positionText="right"
                 as="span"
                 disabled
@@ -82,7 +82,7 @@ const Labeled = () => {
             />
             <RadioButtonComponent
                 label="disabled"
-                textSize="l"
+                textSize="text_l"
                 positionText="right"
                 as="span"
                 disabled
