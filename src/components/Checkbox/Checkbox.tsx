@@ -51,7 +51,7 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckBoxProps>(
             label,
             as = 'div',
             strong,
-            textSize = 'l',
+            textSize = 'text_l',
             size = 'm',
             positionText = 'right',
             checked,

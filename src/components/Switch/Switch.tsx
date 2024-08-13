@@ -7,8 +7,8 @@ import { nullable } from '../../utils';
 import s from './Switch.module.css';
 
 export const sizeMap = {
-    m: s.Switch_size_m,
-    l: s.Switch_size_l,
+    text_m: s.Switch_size_m,
+    text_l: s.Switch_size_l,
 };
 
 interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -25,7 +25,7 @@ export const Switch: React.FC<SwitchProps> = ({
     className,
     label,
     as = 'div',
-    size = 'm',
+    size = 'text_m',
     positionText = 'right',
     disabled,
     strong,

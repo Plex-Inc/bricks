@@ -17,10 +17,16 @@ export interface Tags {
 }
 
 export const textSizeMap = {
-    xs: s.Size_text_xs,
-    s: s.Size_text_s,
-    m: s.Size_text_m,
-    l: s.Size_text_l,
+    text_xs: s.Size_text_xs,
+    text_s: s.Size_text_s,
+    text_m: s.Size_text_m,
+    text_l: s.Size_text_l,
+    text_header_3: s.Size_heading_l,
+    text_header_2: s.Size_heading_xl,
+    text_header_1: s.Size_heading_xxl,
+    text_display_3: s.Size_display_l,
+    text_display_2: s.Size_display_xl,
+    text_display_1: s.Size_display_xxl,
 };
 
 const textWeight = {
@@ -34,12 +40,12 @@ const textWeight = {
 type HeadingTags = Extract<keyof Tags, `h${number}`>;
 
 const headingClasses: Record<HeadingTags, [string, string]> = {
-    h1: [textSizeMap.l, textWeight.bolder],
-    h2: [textSizeMap.l, textWeight.bold],
-    h3: [textSizeMap.m, textWeight.bold],
-    h4: [textSizeMap.m, textWeight.regular],
-    h5: [textSizeMap.s, textWeight.regular],
-    h6: [textSizeMap.xs, textWeight.thin],
+    h1: [textSizeMap.text_header_1, textWeight.bolder],
+    h2: [textSizeMap.text_header_2, textWeight.bold],
+    h3: [textSizeMap.text_header_3, textWeight.bold],
+    h4: [textSizeMap.text_l, textWeight.regular],
+    h5: [textSizeMap.text_m, textWeight.regular],
+    h6: [textSizeMap.text_s, textWeight.thin],
 };
 
 type TextProps<T extends keyof Tags> = {
@@ -60,7 +66,7 @@ const calcTextSizes = (tag: string, size?: keyof typeof textSizeMap) =>
 export const Text = <T extends typeof defaultTagName>({
     as,
     children,
-    size = 's',
+    size = 'text_s',
     strong,
     isDisabled,
     className,

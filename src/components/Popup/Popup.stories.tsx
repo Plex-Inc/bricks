@@ -25,7 +25,7 @@ export const PopupDefault = () => {
             <Popup visible reference={ref} minWidth={100} maxWidth={300} placement="bottom" interactive>
                 {Array.from({ length: 6 }).map((_, index) => (
                     <MenuItem key={index}>
-                        <Text size="s">Item {index + 1}</Text>
+                        <Text size="text_s">Item {index + 1}</Text>
                     </MenuItem>
                 ))}
             </Popup>
