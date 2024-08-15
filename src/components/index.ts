@@ -5,7 +5,7 @@ export const Typography = {
 };
 export { RadioButton } from './RadioButton/RadioButton';
 export { Checkbox } from './Checkbox/Checkbox';
-export { Tab } from './Tab/Tab';
+export { Tab, Tabs } from './Tab/Tab';
 export { Button } from './Button/Button';
 export { Input } from './Input/Input';
 export { Modal, ModalCloseButton, ModalHeader, ModalHeaderText } from './Modal/Modal';
