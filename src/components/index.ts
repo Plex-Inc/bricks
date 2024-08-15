@@ -20,6 +20,6 @@ export { MenuItem } from './MenuItem/MenuItem';
 export { Tooltip } from './Tooltip/Tooltip';
 export { FormControl, FormControlError, FormControlInput, FormControlLabel } from './FormControl/FormControl';
 export { Divider } from './Divider/Divider';
-export { VerificationBox, VerificationInput } from './VerificationInput/VerificationInput';
+export { VerificationInput } from './VerificationInput/VerificationInput';
 export { SwitchTheme } from './SwitchTheme/SwitchTheme';
 export { Pagination } from './Pagination/Pagination';
