@@ -22,3 +22,4 @@ export { FormControl, FormControlError, FormControlInput, FormControlLabel } fro
 export { Divider } from './Divider/Divider';
 export { VerificationBox, VerificationInput } from './VerificationInput/VerificationInput';
 export { SwitchTheme } from './SwitchTheme/SwitchTheme';
+export { Pagination } from './Pagination/Pagination';
