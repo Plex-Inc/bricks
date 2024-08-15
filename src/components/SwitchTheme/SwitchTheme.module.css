@@ -4,7 +4,7 @@
 }
 
 .Box {
-  border: 1.5px solid var(--base-layer);
+  border: 1.5px solid var(--base-layer-border);
   display: flex;
   align-items: center;
   height: 24px;
@@ -40,7 +40,7 @@
 .Icon {
   border-radius: var(--radius-xs);
   padding: 4px;
-  background-color: var(--base-layer);
+  background-color: var(--base-background);
 }
 
 .MoonIcon_checked {
