@@ -1,4 +1,13 @@
-import React from 'react';
+import React, {
+    createContext,
+    PropsWithChildren,
+    ReactNode,
+    useCallback,
+    useContext,
+    useEffect,
+    useMemo,
+    useState,
+} from 'react';
 import cn from 'classnames';
 
 import s from './Tab.module.css';
@@ -26,7 +35,7 @@ const viewMap = {
 
 interface TabProps {
     name: string;
-    label: React.ReactNode;
+    label: ReactNode;
     size?: keyof typeof sizeMap;
     className?: string;
 }
@@ -41,16 +50,16 @@ interface TabsProps {
 
 interface TabActiveState {
     name: string;
-    content: React.ReactNode;
+    content: ReactNode;
 }
 
 interface TabsContextValue {
     switchTab: (nextState: TabActiveState) => void;
     active: string;
-    content: React.ReactNode;
+    content: ReactNode;
 }
 
-const TabsContext = React.createContext<TabsContextValue>({
+const TabsContext = createContext<TabsContextValue>({
     switchTab: () => {
         throw new Error('Context in not initialized');
     },
@@ -58,21 +67,18 @@ const TabsContext = React.createContext<TabsContextValue>({
     content: null,
 });
 
-export const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
+export const Tabs = ({
     view = 'background',
     active = 'unknown',
     size = 's',
     onChange,
     children,
     className,
-}) => {
-    const [{ name, content }, setActiveTab] = React.useState<TabActiveState>(() => ({ name: active, content: null }));
-    const prevActiveTabName = React.useRef(name);
+}: PropsWithChildren<TabsProps>) => {
+    const [{ name, content }, setActiveTab] = useState<TabActiveState>(() => ({ name: active, content: null }));
 
-    React.useEffect(() => {
-        if (prevActiveTabName.current !== name) {
-            onChange?.(name);
-        }
+    useEffect(() => {
+        onChange?.(name);
     }, [name, onChange]);
 
     return (
@@ -82,41 +88,35 @@ export const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
     );
 };
 
-export const Tab: React.FC<React.PropsWithChildren<TabProps>> = ({
-    name,
-    label,
-    children,
-    size = 's',
-    className,
-    ...rest
-}) => {
-    const { switchTab, active } = React.useContext(TabsContext);
-    const prevChildRef = React.useRef<React.ReactNode>();
+export const Tab = ({ name, label, children, size = 's', className, ...rest }: PropsWithChildren<TabProps>) => {
+    const { switchTab, active } = useContext(TabsContext);
 
     const currentTab = active === name;
 
-    const value: TabActiveState = React.useMemo(() => ({ name, content: children }), [name, children]);
+    const value: TabActiveState = useMemo(() => {
+        return {
+            name,
+            content: children,
+        };
+    }, [name, children]);
 
-    const handleTabChange = React.useCallback(() => switchTab(value), [switchTab, value]);
+    const handleTabChange = useCallback(
+        (value: TabActiveState) => () => {
+            switchTab(value);
+        },
+        [switchTab],
+    );
 
-    React.useEffect(() => {
-        if (currentTab && prevChildRef.current !== value.content) {
-            handleTabChange();
-            prevChildRef.current = value.content;
+    useEffect(() => {
+        if (currentTab) {
+            handleTabChange(value)();
         }
     }, [currentTab, value, handleTabChange]);
 
     return (
         <span
-            onClick={handleTabChange}
-            className={cn(
-                s.Tab_Wrapper,
-                sizeMap[size],
-                {
-                    [s.Active_tab]: currentTab,
-                },
-                className,
-            )}
+            onClick={handleTabChange(value)}
+            className={cn(s.Tab_Wrapper, sizeMap[size], { [s.Active_tab]: currentTab }, className)}
             {...rest}
         >
             {label}
