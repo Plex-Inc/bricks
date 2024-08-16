@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/Plex-Inc/bricks/compare/v1.5.0...v1.6.0) (2024-08-16)
+
+
+### Bug Fixes
+
+* css variable ([4059dcb](https://github.com/Plex-Inc/bricks/commit/4059dcb6d455c103a1379f2214bd9c8babb87451))
+* export tabs component ([4c25151](https://github.com/Plex-Inc/bricks/commit/4c251513db3db97a2c75e23e3dfb8f464fddbca3))
+
+
+### Features
+
+* pagination component ([4ad2b1a](https://github.com/Plex-Inc/bricks/commit/4ad2b1a1816a7446c34aa30fd67110289f86ef65))
+
 # [1.5.0](https://github.com/Plex-Inc/bricks/compare/v1.4.0...v1.5.0) (2024-08-13)
 
 
