@@ -90,13 +90,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             variantMap[variant],
             variantViewMap[view][variant],
             sizeMap[size],
-            disabled,
             brick ? [s.Button_brick, brickMap[brick]] : '',
             className,
         ];
 
         return (
-            <button className={cn(classes)} ref={ref} type={type} {...rest}>
+            <button className={cn(classes)} disabled={disabled} ref={ref} type={type} {...rest}>
                 {nullable(
                     !text && icons,
                     ([icon]) => (
