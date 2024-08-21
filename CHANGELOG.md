@@ -1,3 +1,11 @@
+## [1.6.1](https://github.com/Plex-Inc/bricks/compare/v1.6.0...v1.6.1) (2024-08-21)
+
+
+### Bug Fixes
+
+* **Button:** add 'disabled' prop to component ([5999b97](https://github.com/Plex-Inc/bricks/commit/5999b975504316ef768b853eff4dae388d1f56e9))
+* **VerivicationInput:** input should work on ctrl+v ([1df3bc7](https://github.com/Plex-Inc/bricks/commit/1df3bc71276d1bce9f0d175724888db170c5bb7a))
+
 # [1.6.0](https://github.com/Plex-Inc/bricks/compare/v1.5.0...v1.6.0) (2024-08-16)
 
 
