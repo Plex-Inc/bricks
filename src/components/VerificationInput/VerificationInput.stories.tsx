@@ -39,7 +39,6 @@ export const Default: Story = {
 
 const DefaultVerificationInput = () => {
     const [, setSecret] = useState('');
-
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <VerificationInput onChange={setSecret} />

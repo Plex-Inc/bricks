@@ -1,4 +1,12 @@
-import React, { InputHTMLAttributes, MutableRefObject, forwardRef, useEffect, useRef, useState } from 'react';
+import React, {
+    InputHTMLAttributes,
+    MutableRefObject,
+    forwardRef,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import cn from 'classnames';
 
 import { nullable } from '../../utils';
@@ -63,36 +71,71 @@ export const VerificationInput: React.FC<React.PropsWithChildren<VerificationInp
     const arrayString = Array(length).fill('');
     const [code, setCode] = useState<string[]>(arrayString);
 
-    const handleChange = (index: number, value: string) => {
-        const newCode = [...code];
-        newCode[index] = value;
-        setCode(newCode);
-
-        if (value.length === 1) {
-            const nextIndex = Math.min(index + 1, length - 1);
-            const inputElement = boxRef.current?.querySelector(`#totp-input-${nextIndex}`);
+    const focusInput = useCallback(
+        (index: number) => {
+            const inputElement = boxRef.current?.querySelector(`#totp-input-${index}`);
             if (inputElement instanceof HTMLInputElement) {
                 inputElement.focus();
             }
-        }
-        if (!value.length) {
-            const backIndex = Math.min(index - 1, length - 1);
-            const inputElement = boxRef.current?.querySelector(`#totp-input-${backIndex}`);
-            if (inputElement instanceof HTMLInputElement) {
-                inputElement.focus();
-            }
-        }
+        },
+        [boxRef, onChange, code],
+    );
 
-        onChange(newCode.join(''));
-    };
+    const handleChange = useCallback(
+        (index: number, value: string) => {
+            const newCode = [...code];
+            const valueNumber = value.replace(/[^0-9]/g, '');
+            newCode[index] = valueNumber;
+            setCode(newCode);
+
+            if (valueNumber.length === 1) {
+                const nextIndex = Math.min(index + 1, length - 1);
+                focusInput(nextIndex);
+            }
+
+            if (!valueNumber.length) {
+                const backIndex = Math.max(index - 1, 0);
+                focusInput(backIndex);
+            }
+
+            onChange(newCode.join(''));
+        },
+        [boxRef, code, onChange],
+    );
+
+    const handlePaste = useCallback(
+        (event: React.ClipboardEvent<HTMLDivElement>) => {
+            event.preventDefault();
+
+            const pastedText = event.clipboardData.getData('text');
+            let pastedNumbers = pastedText.replace(/[^0-9]/g, '');
+
+            if (pastedNumbers.length > length) {
+                pastedNumbers = pastedNumbers.substring(0, length);
+            }
+
+            const newCode = [...arrayString];
+            for (let i = 0; i < pastedNumbers.length; i++) {
+                newCode[i] = pastedNumbers[i];
+                focusInput(i);
+            }
+            setCode(newCode);
+            onChange(newCode.join(''));
+            focusInput(pastedNumbers.length);
+        },
+        [boxRef],
+    );
 
     useEffect(() => {
+        focusInput(0);
         if (!boxRef.current) return;
-        const inputElement = boxRef.current.querySelector(`#totp-input-${0}`);
 
-        if (inputElement instanceof HTMLInputElement) {
-            inputElement.focus();
-        }
+        boxRef.current.addEventListener('paste', handlePaste as unknown as EventListener);
+
+        return () => {
+            if (!boxRef.current) return;
+            boxRef.current.removeEventListener('paste', handlePaste as unknown as EventListener);
+        };
     }, []);
 
     return (
