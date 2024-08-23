@@ -24,3 +24,4 @@ export { VerificationInput } from './VerificationInput/VerificationInput';
 export { SwitchTheme } from './SwitchTheme/SwitchTheme';
 export { Pagination } from './Pagination/Pagination';
 export { StatusBadge } from './StatusBadge/StatusBadge';
+export { Badge } from './Badge/Badge';
