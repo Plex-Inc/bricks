@@ -10,7 +10,7 @@
     font-weight: 600;
     gap: var(--gap-s);
 
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all var(--transition-time) var(--transition-func);
 
     position: relative;
@@ -56,6 +56,7 @@
 
 /* BAZA */
 .Button_primary {}
+
 .Button_transparent {
     background-color: transparent;
 }
@@ -83,10 +84,6 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_ghost_primary:disabled {
-    color: var(--text-disabled);
-    background: var(--button-ghost-disabled);
-}
 
 
 .Button_ghost_transparent {
@@ -103,10 +100,6 @@
 
 .Button_ghost_transparent:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_ghost_transparent:disabled {
-    color: var(--text-disabled);
 }
 
 
@@ -126,11 +119,6 @@
 
 .Button_ghost_outlined:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_ghost_outlined:disabled {
-    color: var(--text-disabled);
-    border-color: var(--button-ghost-disabled);
 }
 
 
@@ -158,10 +146,6 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_warning_primary:disabled {
-    color: var(--text-disabled);
-    background-color: var(--button-warn-disabled);
-}
 
 
 .Button_warning_transparent {
@@ -178,10 +162,6 @@
 
 .Button_warning_transparent:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_warning_transparent:disabled {
-    color: var(--text-disabled);
 }
 
 
@@ -201,11 +181,6 @@
 
 .Button_warning_outlined:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_warning_outlined:disabled {
-    color: var(--text-disabled);
-    border-color: var(--button-warn-disabled);
 }
 
 
@@ -230,11 +205,6 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_danger_primary:disabled {
-    color: var(--text-disabled);
-    background: var(--button-danger-disabled);
-}
-
 
 .Button_danger_transparent {
     color: var(--text-danger);
@@ -250,10 +220,6 @@
 
 .Button_danger_transparent:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_danger_transparent:disabled {
-    color: var(--text-disabled);
 }
 
 
@@ -273,11 +239,6 @@
 
 .Button_danger_outlined:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_danger_outlined:disabled {
-    color: var(--text-disabled);
-    border-color: var(--button-danger-disabled);
 }
 
 
@@ -302,11 +263,6 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_positive_primary:disabled {
-    color: var(--text-disabled);
-    background: var(--button-positive-disabled);
-}
-
 
 .Button_positive_transparent {
     color: var(--text-positive);
@@ -322,10 +278,6 @@
 
 .Button_positive_transparent:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_positive_transparent:disabled {
-    color: var(--text-disabled);
 }
 
 
@@ -345,11 +297,6 @@
 
 .Button_positive_outlined:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_positive_outlined:disabled {
-    color: var(--text-disabled);
-    border-color: var(--button-positive-disabled);
 }
 
 
@@ -373,11 +320,6 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_brand_primary:disabled {
-    color: var(--text-disabled);
-    background: var(--button-brand-disabled);
-}
-
 
 .Button_brand_transparent {
     color: var(--text-brand);
@@ -393,10 +335,6 @@
 
 .Button_brand_transparent:focus {
     outline: 2px solid var(--button-ghost-focus);
-}
-
-.Button_brand_transparent:disabled {
-    color: var(--text-disabled);
 }
 
 
@@ -418,7 +356,24 @@
     outline: 2px solid var(--button-ghost-focus);
 }
 
-.Button_brand_outlined:disabled {
+
+
+
+/* DISABLED */
+
+.Button_primary:disabled {
+    cursor: not-allowed;
     color: var(--text-disabled);
-    border-color: var(--button-brand-disabled);
+    background: var(--button-disabled);
+}
+
+.Button_transparent:disabled {
+    cursor: not-allowed;
+    color: var(--text-disabled);
+    background-color: transparent;
+}
+.Button_outlined:disabled {
+    color: var(--text-disabled);
+    border-color: var(--button-ghost-disabled);
+    background-color: transparent;
 }

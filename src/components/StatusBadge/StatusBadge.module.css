@@ -1,0 +1,37 @@
+.StatusBadge{
+    border-radius: 100%;
+}
+
+.StatusBadge_s{
+    width: 6px;
+    height: 6px;
+}
+
+.StatusBadge_m{
+    width: 8px;
+    height: 8px;
+}
+
+.StatusBadge_ghost{
+    background-color: var(--base-layer-accent);
+}
+
+.StatusBadge_info{
+    background-color: var(--base-info);
+}
+
+.StatusBadge_warn{
+    background-color: var(--base-warn);
+}
+
+.StatusBadge_danger{
+    background-color: var(--base-danger);
+}
+
+.StatusBadge_positive{
+    background-color: var(--base-positive);
+}
+
+.StatusBadge_brand{
+    background-color: var(--base-brand);
+}
