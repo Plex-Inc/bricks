@@ -1,3 +1,11 @@
+## [1.7.1](https://github.com/Plex-Inc/bricks/compare/v1.7.0...v1.7.1) (2024-08-30)
+
+
+### Bug Fixes
+
+* modal component ([a1f0467](https://github.com/Plex-Inc/bricks/commit/a1f04679ad889532868b77e7e90453ba63063411))
+* radioButton component ([aaed5b8](https://github.com/Plex-Inc/bricks/commit/aaed5b84259de2151b92f32056be64f9e3359e51))
+
 # [1.7.0](https://github.com/Plex-Inc/bricks/compare/v1.6.1...v1.7.0) (2024-08-28)
 
 
