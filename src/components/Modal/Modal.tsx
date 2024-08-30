@@ -33,7 +33,7 @@ export interface ModalHeaderTextProps {
     children?: ReactNode;
 }
 
-export type ModalHeaderProps = Omit<ModalProps, 'className' | 'isOpen'>;
+export type ModalHeaderProps = Omit<ModalProps, 'isOpen'>;
 
 export const ModalOverlay = ({ children }: PropsWithChildren) => <div className={cn(s.ModalOverlay)}>{children}</div>;
 
@@ -52,8 +52,8 @@ export const ModalHeaderText = ({ title, children }: ModalHeaderTextProps) => (
     </div>
 );
 
-export const ModalHeader = ({ size = 'm', children }: ModalHeaderProps) => {
-    return <div className={cn(s.Header, sizeMap[size])}>{children}</div>;
+export const ModalHeader = ({ size = 'm', children, className, ...rest }: ModalHeaderProps) => {
+    return <div className={cn(s.Header, sizeMap[size], className, { ...rest })}>{children}</div>;
 };
 
 export const Modal = ({ size = 'm', isOpen, onClose, children, className, ...props }: ModalProps) => {
