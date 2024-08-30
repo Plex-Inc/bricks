@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/Plex-Inc/bricks/compare/v1.6.1...v1.7.0) (2024-08-28)
+
+
+### Bug Fixes
+
+* `Tab` component ([4cb3bb2](https://github.com/Plex-Inc/bricks/commit/4cb3bb24ee6c7f7f301ce614a633a509eae4f8c9))
+
+
+### Features
+
+* badge component ([2542c47](https://github.com/Plex-Inc/bricks/commit/2542c470dcad46aa52dc0882cf319c8ede5b832e))
+* statusbadge component ([b87cdc9](https://github.com/Plex-Inc/bricks/commit/b87cdc9a1aa470a4c0efcb7a60213d9dcf769908))
+
 ## [1.6.1](https://github.com/Plex-Inc/bricks/compare/v1.6.0...v1.6.1) (2024-08-21)
 
 
