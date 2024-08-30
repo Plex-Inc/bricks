@@ -19,13 +19,14 @@ interface RadioButtonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, '
     label?: React.ReactNode;
     as?: keyof Tags;
     positionText?: 'right' | 'left';
+    className?: string;
     strong?: boolean;
     size?: keyof typeof sizeMap;
 }
 
 export const RadioButton = forwardRef<HTMLLabelElement, RadioButtonProps>(
     (
-        { checked, disabled, label, value, as = 'div', positionText = 'right', strong, size = 'm', ...rest },
+        { checked, disabled, label, value, as = 'div', positionText = 'right', strong, size = 'm', className, ...rest },
         forwardedRef,
     ) => {
         const sizes: { size: RadioButtonProps['size']; textSize: 'text_m' | 'text_l' } = useMemo(() => {
@@ -37,7 +38,7 @@ export const RadioButton = forwardRef<HTMLLabelElement, RadioButtonProps>(
 
         return (
             <label className={cn(s.WrapperLabel, { [s.WrapperDisabled]: disabled })} ref={forwardedRef}>
-                <div className={cn(s.Wrapper)}>
+                <div className={cn(s.Wrapper, className)}>
                     {nullable(label && positionText === 'left', () => (
                         <Text as={as} size={sizes.textSize} isDisabled={disabled} strong={strong}>
                             {label}
