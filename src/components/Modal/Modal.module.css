@@ -48,10 +48,10 @@
 
     .Wrapper {
         border-radius: var(--radius-m) var(--radius-m) 0px 0px;
-        height: 50%;
+        max-height: 50%;
+        overflow-y: auto;
     }
 }
-
 
 /* SIZE */
 .Modal_size_s {
@@ -81,7 +81,6 @@
     justify-content: center;
     cursor: pointer;
 }
-
 
 
 
