@@ -90,7 +90,7 @@
     "typescript": "^5.3.2",
     "typescript-plugin-css-modules": "^5.0.2",
     "vite": "^5.0.2",
-    "vite-plugin-dts": "^3.6.3"
+    "vite-plugin-dts": "^4.2.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
