@@ -1,0 +1,47 @@
+.AccordionWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all var(--transition-time) var(--transition-func);
+}
+
+.Accordion {
+    display: flex;
+    gap: 12px;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.RightIcon {
+    justify-content: space-between;
+}
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+}
+
+.TextSecondary {
+    color: var(--text-secondary);
+}
+
+.ActiveAccordion {
+    background-color: var(--base-layer);
+}
+
+
+/* SIZE */
+
+.Accordion_size_s {
+    padding: 24px;
+}
+.Accordion_size_m {
+    padding: 32px;
+}
+.Accordion_size_l {
+    padding: 38px;
+}
