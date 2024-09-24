@@ -14,7 +14,9 @@
     font-family: var(--font-family);
     display: flex;
     align-items: center;
-    transition: all var(--transition-time) var(--transition-func);
+    transition-property: background-color, color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-func);
     border-radius: var(--radius-s);
 }
 

@@ -27,7 +27,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    transition: all var(--transition-time) var(--transition-func);
+    transition-property: background-color, border-color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-func);
 }
 
 

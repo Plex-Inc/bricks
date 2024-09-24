@@ -11,7 +11,7 @@
     gap: var(--gap-s);
 
     /* cursor: pointer; */
-    transition: all var(--transition-time) var(--transition-func);
+    transition: background-color var(--transition-time) var(--transition-func);
 
     position: relative;
 }

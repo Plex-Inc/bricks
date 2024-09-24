@@ -29,7 +29,9 @@
     border: 1px solid var(--base-brand);
     border-radius: 12px;
     padding: 4px;
-    transition: all var(--transition-time) var(--transition-func);
+    transition-property: background-color, border-color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-func);
 }
 
 
