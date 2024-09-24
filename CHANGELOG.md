@@ -1,3 +1,16 @@
+# [1.8.0](https://github.com/Plex-Inc/bricks/compare/v1.7.1...v1.8.0) (2024-09-24)
+
+
+### Bug Fixes
+
+* input component ([ee8af8a](https://github.com/Plex-Inc/bricks/commit/ee8af8a13d85e0e4fc5488b85f181d906a818dcf))
+* removed transition all on components ([6d500a6](https://github.com/Plex-Inc/bricks/commit/6d500a6bb93247e487ed5b1bf695cefac4501e49))
+
+
+### Features
+
+* accordion component ([81ae54b](https://github.com/Plex-Inc/bricks/commit/81ae54ba263a7e684c00d51ff87af0566b59eb7f))
+
 ## [1.7.1](https://github.com/Plex-Inc/bricks/compare/v1.7.0...v1.7.1) (2024-08-30)
 
 
