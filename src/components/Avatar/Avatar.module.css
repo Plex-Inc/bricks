@@ -32,6 +32,7 @@
     border: none;
     outline: none;
     border-radius: 100%;
+    min-width: var(--circle-size);
     width: var(--circle-size);
     height: var(--circle-size);
 }
