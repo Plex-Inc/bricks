@@ -1,5 +1,4 @@
 .MenuItem {
-    padding: var(--gap-s) var(--gap-sm);
     border-radius: var(--radius-s);
     transition: background-color var(--transition-time) var(--transition-func);
 }
@@ -11,6 +10,25 @@
 
 .MenuItem:not(.MenuItem_disabled):active {
     background-color: var(--base-layer-accent);
+}
+
+
+/* SIZE */
+.MenuItem_size_s {
+    padding: var(--gap-s) var(--gap-sm);
+}
+
+.MenuItem_size_m {
+    padding: var(--gap-s) var(--gap-m);
+}
+
+.MenuItem_size_l {
+    padding: var(--gap-sm) var(--gap-l);
+}
+
+/* STATUS */
+.MenuItem_active {
+    background-color: var(--base-hover);
 }
 
 .MenuItem_disabled {
