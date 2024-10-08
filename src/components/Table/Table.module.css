@@ -1,0 +1,26 @@
+.Table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.HeadRow {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px 4px 16px;
+}
+
+.Row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    background-color: var(--base-layer);
+    border-radius: 16px;
+    padding: 16px;
+}

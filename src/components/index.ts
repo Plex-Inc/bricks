@@ -26,3 +26,5 @@ export { Pagination } from './Pagination/Pagination';
 export { StatusBadge } from './StatusBadge/StatusBadge';
 export { Badge } from './Badge/Badge';
 export { Accordion, AccordionTable } from './Accordion/Accordion';
+export { Skeleton } from './Skeleton/Skeleton';
+export { Table, TableCell, TableHead, TableRow } from './Table/Table';
