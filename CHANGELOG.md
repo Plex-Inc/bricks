@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/Plex-Inc/bricks/compare/v1.8.0...v1.9.0) (2024-10-08)
+
+
+### Bug Fixes
+
+* text sizes fix ([bfbf7d6](https://github.com/Plex-Inc/bricks/commit/bfbf7d675f73292aa5105a6796b8fd39e07522b8))
+* user component ([2a75352](https://github.com/Plex-Inc/bricks/commit/2a75352c0f8b5eb2ae03658f17caa52ce7bb152c))
+
+
+### Features
+
+* table component ([cb44155](https://github.com/Plex-Inc/bricks/commit/cb441556cc53073e6b6752353d95cef94b555be4))
+* useIsMobile hook ([87ce8bd](https://github.com/Plex-Inc/bricks/commit/87ce8bdd645c682bdc84f5ee5667db7239698e59))
+
 # [1.8.0](https://github.com/Plex-Inc/bricks/compare/v1.7.1...v1.8.0) (2024-09-24)
 
 
