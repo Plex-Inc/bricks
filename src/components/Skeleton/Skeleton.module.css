@@ -1,0 +1,27 @@
+.Skeleton {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 16px;
+    width: 100%;
+    background-color: var(--base-layer);
+}
+.Skeleton::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, var(--base-layer) 0%, var(--base-layer-hover) 20%, var(--base-layer-hover) 40%, var(--base-layer) 100%);
+    background-repeat: no-repeat;
+    background-size: 450px 400px;
+    animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+    0%{
+      background-position: -450px 0;
+    }
+    100%{
+      background-position: 450px 0;
+    }
+  }
