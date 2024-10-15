@@ -47,7 +47,7 @@ const Default: Story = {
         return (
             <>
                 <Button text="Click me" view="ghost" size="l" onClick={() => setView(true)} />
-                <Modal isOpen={view} onClose={() => setView(false)}>
+                <Modal isOpen={view} onClose={() => setView(false)} overlayClose>
                     <ModalHeader>
                         <ModalHeaderText title="Раскрытие меню">
                             <BackImg />

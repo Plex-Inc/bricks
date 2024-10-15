@@ -1,10 +1,11 @@
-import React, { PropsWithChildren, ReactNode, useEffect } from 'react';
+import React, { PropsWithChildren, ReactNode, useCallback, useEffect, useRef } from 'react';
 import cn from 'classnames';
 
 import { nullable } from '../../utils';
 import { Portal } from '../Portal/Portal';
 import { KeyCode, useKeyboard } from '../../hooks';
 import { Text } from '../Text/Text';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
 import s from './Modal.module.css';
 
@@ -21,6 +22,8 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
     isOpen?: boolean;
     onClose?: () => void;
     isCloseIcon?: boolean;
+    // If true modal will close on overlay click
+    overlayClose?: boolean;
 }
 
 export interface ModalCloseButtonProps {
@@ -56,10 +59,16 @@ export const ModalHeader = ({ size = 'm', children, className, ...rest }: ModalH
     return <div className={cn(s.Header, sizeMap[size], className, { ...rest })}>{children}</div>;
 };
 
-export const Modal = ({ size = 'm', isOpen, onClose, children, className, ...props }: ModalProps) => {
-    const [onESC] = useKeyboard([KeyCode.Escape], () => onClose?.(), {
+export const Modal = ({ size = 'm', isOpen, onClose, children, className, overlayClose, ...props }: ModalProps) => {
+    const [onESC] = useKeyboard([KeyCode.Escape], onClose, {
         disableGlobalEvent: false,
     });
+
+    const contentRef = useRef(null);
+    const handleOverlayClick = useCallback(() => {
+        overlayClose && onClose && onClose();
+    }, []);
+    useOnClickOutside(contentRef, handleOverlayClick);
 
     useEffect(() => {
         if (isOpen) {
@@ -74,7 +83,7 @@ export const Modal = ({ size = 'm', isOpen, onClose, children, className, ...pro
     return nullable(isOpen, () => (
         <Portal id="modal">
             <ModalOverlay>
-                <div className={cn(s.Wrapper, className)} {...onESC} {...props}>
+                <div className={cn(s.Wrapper, className)} ref={contentRef} {...onESC} {...props}>
                     <div
                         className={cn(s.Content, {
                             [s.Content_size_s]: size === 's',
