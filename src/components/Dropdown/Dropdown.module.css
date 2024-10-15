@@ -1,0 +1,40 @@
+.Dropdown_size_s{
+    padding: var(--spacing-xs) var(--spacing-s) var(--spacing-xs) var(--spacing-xs);
+}
+
+.Dropdown_size_m{
+    padding: 6px 10px 6px 6px;
+}
+
+.Dropdown_size_l{
+    padding: 8px 12px 8px 8px;
+}
+
+.Dropdown_background{
+    background-color: var(--input-fill);
+}
+
+.Dropdown_layer{
+    background-color: var(--input-fill-layer);
+}
+
+.DropdownTrigger{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    gap: var(--gap-xs);
+}
+
+.DropdownActive{
+    border-color: var(--input-border-brand);
+}
+
+.DropdownDisabled{
+    background-color: var(--input-disabled);
+    opacity: .5;
+}
+
+.DropdownError{
+    border-color: var(--danger-500);
+}
