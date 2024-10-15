@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/Plex-Inc/bricks/compare/v1.9.0...v1.10.0) (2024-10-15)
+
+
+### Bug Fixes
+
+* add props overlayClose ([7571821](https://github.com/Plex-Inc/bricks/commit/757182108decd86a1cc58d4e38391b8643fc8fa7))
+
+
+### Features
+
+* **Dropdown:** create component ([2fc964f](https://github.com/Plex-Inc/bricks/commit/2fc964fd129e4997f28ddc1d0009c0f9798a31c2))
+
 # [1.9.0](https://github.com/Plex-Inc/bricks/compare/v1.8.0...v1.9.0) (2024-10-08)
 
 
