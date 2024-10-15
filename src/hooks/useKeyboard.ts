@@ -135,7 +135,7 @@ export type KeyboardResult = Array<Record<KeyboardEvents, React.KeyboardEventHan
 
 export const useKeyboard = (
     bindings: Array<number>,
-    handler: (event: React.KeyboardEvent | KeyboardEvent) => void,
+    handler?: (event: React.KeyboardEvent | KeyboardEvent) => void,
     {
         disableGlobalEvent = true,
         capture = false,
