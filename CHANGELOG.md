@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/Plex-Inc/bricks/compare/v1.10.0...v1.10.1) (2024-11-08)
+
+
+### Bug Fixes
+
+* textarea ([9a81641](https://github.com/Plex-Inc/bricks/commit/9a816413ae23413f7c4b5bc0fa21340d4d4a1d13))
+
 # [1.10.0](https://github.com/Plex-Inc/bricks/compare/v1.9.0...v1.10.0) (2024-10-15)
 
 
