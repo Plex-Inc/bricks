@@ -25,7 +25,7 @@ interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-    ({ view = 'default', variant = 'background', placeholder, errorMessage, ref }) => {
+    ({ view = 'default', variant = 'background', placeholder, errorMessage, ref, ...rest }) => {
         return (
             <div className={s.TextareaWrapper} ref={ref}>
                 <textarea
@@ -34,6 +34,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
                     placeholder={placeholder}
                     cols={30}
                     rows={4}
+                    {...rest}
                 />
                 {nullable(errorMessage, (message) => (
                     <div className={s.Error}>
