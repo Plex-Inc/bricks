@@ -1,3 +1,16 @@
+# [1.11.0](https://github.com/Plex-Inc/bricks/compare/v1.10.1...v1.11.0) (2025-01-21)
+
+
+### Bug Fixes
+
+* pagination component ([d852a2f](https://github.com/Plex-Inc/bricks/commit/d852a2f37a70e20619d0f3396137c67d4efaeda2))
+
+
+### Features
+
+* add formControlTextError component ([a1fe735](https://github.com/Plex-Inc/bricks/commit/a1fe735443eed7eca6dd898ecfbe509e020b5887))
+* install @plex-inc/icons in component library ([966c695](https://github.com/Plex-Inc/bricks/commit/966c695748fb9903741ced3035ac8c8ebd30884a))
+
 ## [1.10.1](https://github.com/Plex-Inc/bricks/compare/v1.10.0...v1.10.1) (2024-11-08)
 
 
