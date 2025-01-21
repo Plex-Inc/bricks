@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 
 import { nullable } from '../../utils';
 
-import { FormControl, FormControlError, FormControlInput, FormControlLabel } from './FormControl';
+import { FormControl, FormControlError, FormControlInput, FormControlLabel, FormControlTextError } from './FormControl';
 
 const meta: Meta<typeof FormControl> = {
     title: 'Example/FormControl',
@@ -38,7 +38,7 @@ const ErrorControl = () => {
                     onChange={(e) => setValue(e.target.value)}
                 />
                 {nullable(value.length < 4 && { message: 'Some error' }, (error) => (
-                    <FormControlError error={error} />
+                    <FormControlTextError error={error} />
                 ))}
             </FormControl>
             <FormControl>

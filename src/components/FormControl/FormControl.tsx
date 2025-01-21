@@ -116,3 +116,29 @@ export const FormControlError = ({ children, error, placement = 'bottom', ...pro
         </Tooltip>
     );
 };
+
+export const FormControlTextError = ({ children, error, ...props }: FormControlErrorProps) => {
+    const { handleError } = useFormControlContext();
+
+    useEffect(() => {
+        if (error) {
+            handleError(error);
+        } else {
+            handleError({ message: children });
+        }
+
+        return () => {
+            handleError(undefined);
+        };
+    }, [children, error, handleError]);
+
+    if (error && children) {
+        throw new Error("FormControlError: Both 'error' and 'children' props are provided. Only one should be used.");
+    }
+
+    return (
+        <Text size="text_s" style={{ color: 'var(--base-danger)' }} {...props}>
+            {nullable(error, ({ message }) => message, children)}
+        </Text>
+    );
+};
