@@ -4,15 +4,18 @@
 }
 
 .Pagination_size_s .PaginationItem{
-    width: 28px;
+    min-width: 28px;
+    max-width: 100%;
     height: 26px;
 }
 .Pagination_size_m .PaginationItem{
-    width: 30px;
+    min-width: 30px;
+    max-width: 100%;
     height: 28px;
 }
 .Pagination_size_l .PaginationItem{
-    width: 32px;
+    min-width: 32px;
+    max-width: 100%;
     height: 30px;
 }
 
@@ -35,8 +38,8 @@
 }
 
 .PaginationItem_active{
-    color: var(--text-primary);
-    background: var(--base-brand-medium);
+    color: var(--text-primary-on-brand);
+    background: var(--base-brand);
 }
 
 .PaginationItem:disabled{
