@@ -1,27 +1,10 @@
 import React, { HTMLAttributes, useCallback } from 'react';
+import { LeftStroke, RightStroke } from '@plex-inc/icons';
 import cn from 'classnames';
 
 import { PaginationData, usePagination } from '../../hooks/usePagination';
 
 import s from './Pagination.module.css';
-
-// TODO: Замена иконок на иконки из либы
-function LeftIcon() {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M12.8 1.06667L5.33334 8L12.8 14.9333" stroke="#554AE2" strokeLinecap="square" />
-        </svg>
-    );
-}
-
-// TODO: Замена иконок на иконки из либы
-function RightIcon() {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M5.33331 14.9333L12.8 8L5.33331 1.06667" stroke="#554AE2" strokeLinecap="square" />
-        </svg>
-    );
-}
 
 const sizeMap: Record<string, unknown> = {
     s: s.Pagination_size_s,
@@ -65,7 +48,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     return (
         <div className={cn(s.Pagination, sizeMap[size], className)}>
             <button disabled={currentPage === 1 || disabled} onClick={handlePrev} className={s.PaginationItem}>
-                <LeftIcon />
+                <LeftStroke size={16} color="var(--icons-brand)" />
             </button>
             {paginationRange.map((item, i) => {
                 return (
@@ -80,7 +63,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 );
             })}
             <button disabled={currentPage === totalCount || disabled} onClick={handleNext} className={s.PaginationItem}>
-                <RightIcon />
+                <RightStroke size={16} color="var(--icons-brand)" />
             </button>
         </div>
     );

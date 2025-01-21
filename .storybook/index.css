@@ -196,6 +196,7 @@
   --text-positive: var(--base-positive);
   --text-primary: #ebebed;
   --text-secondary: #a6a8ae;
+  --text-primary-on-brand: #ebebed;
   --text-warn: var(--base-warn);
   --warn-100: #f2e6d9;
   --warn-200: #e9ceaf;
