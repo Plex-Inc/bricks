@@ -36,3 +36,4 @@ export { Skeleton } from './Skeleton/Skeleton';
 export { Table, TableCell, TableHead, TableRow } from './Table/Table';
 export { User } from './User/User';
 export { Dropdown, DropdownPanel, DropdownTrigger } from './Dropdown/Dropdown';
+export { Timer } from './Timer/Timer';
