@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/Plex-Inc/bricks/compare/v1.11.0...v1.12.0) (2025-05-07)
+
+
+### Bug Fixes
+
+* add export of FormControlTextError component ([b4d20f9](https://github.com/Plex-Inc/bricks/commit/b4d20f9ceabd2321300420fbc7f7f4f0571a617b))
+
+
+### Features
+
+* timer component ([f2ebd2b](https://github.com/Plex-Inc/bricks/commit/f2ebd2bf9790550db4bb5a81448bd2b07ef2e1fc))
+
 # [1.11.0](https://github.com/Plex-Inc/bricks/compare/v1.10.1...v1.11.0) (2025-01-21)
 
 
