@@ -63,21 +63,23 @@ export const FormControl = ({ children, ...props }: FormControlProps) => {
 
 interface FormControlInputProps extends ComponentProps<typeof Input> {}
 
-export const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(({ size = 's', ...props }, ref) => {
-    const { id, error, popupRef } = useFormControlContext();
+export const FormControlInput = forwardRef<HTMLInputElement, FormControlInputProps>(
+    ({ size = 's', pointerEvents = 'none', ref, ...props }) => {
+        const { id, error, popupRef } = useFormControlContext();
 
-    return (
-        <Input
-            id={id}
-            view={error ? 'error' : 'default'}
-            ref={ref}
-            size={size}
-            forwardedRef={popupRef}
-            pointerEvents="none"
-            {...props}
-        />
-    );
-});
+        return (
+            <Input
+                id={id}
+                view={error ? 'error' : 'default'}
+                ref={ref}
+                size={size}
+                forwardedRef={popupRef}
+                pointerEvents={pointerEvents}
+                {...props}
+            />
+        );
+    },
+);
 
 interface FormControlLabelProps extends Omit<ComponentProps<typeof Text>, 'as'> {}
 
